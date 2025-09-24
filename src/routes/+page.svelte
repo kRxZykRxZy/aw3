@@ -1,2 +1,2 @@
-<h1>Welcome to SvelteKit</h1>
-<p>Visit <a href="https://svelte.dev/docs/kit">svelte.dev/docs/kit</a> to read the documentation</p>
+<h1>Welcome to AmpMod</h1>
+<p>It Is Currently A WIP, Instead Visit <a href="https://ampmod.codeberg.page">Ampmod Editor</a></p>
