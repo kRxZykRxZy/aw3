@@ -1,2 +1,6 @@
 <h1>Welcome to AmpMod</h1>
-<p>It Is Currently A WIP, Instead Visit <a href="https://ampmod.codeberg.page">Ampmod Editor</a></p>
+<p>
+	This site is work in progress. Are you looking for the <a href="https://ampmod.codeberg.page"
+		>AmpMod editor</a
+	>?
+</p>
