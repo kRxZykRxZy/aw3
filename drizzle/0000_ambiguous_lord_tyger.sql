@@ -23,6 +23,7 @@ CREATE TABLE "ampmodder" (
 	"rank" smallint DEFAULT 0,
 	"bio" text,
 	"status" text,
+	"userMETA" json, 
 	"password_hash" text NOT NULL,
 	"banned" boolean DEFAULT false,
 	"bannedType" text DEFAULT 'temporary',
