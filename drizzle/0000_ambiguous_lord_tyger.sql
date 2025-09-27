@@ -6,7 +6,8 @@ CREATE TABLE "project" (
 	"notes" text,
 	"creator" text NOT NULL,
 	"ghost" boolean DEFAULT true,
-	"projectJson" json
+	"projectMETA" json, 
+	"projectJSON" json
 );
 --> statement-breakpoint
 CREATE TABLE "session" (
