@@ -4,9 +4,11 @@
     import { isLoggedIn, username } from '$stores/session';
     import { Mail, FolderOpen, ChevronDown, MenuIcon } from '@lucide/svelte'; // Removed Sun, Moon as direct toggle is removed
     import { theme } from '$stores/theme'; // Assuming $stores/theme is a writable store
-
+    import * as table from '$lib/server/db/schema';
+    import { db } from '$lib/server/db';
     import { onMount } from 'svelte';
     import { fade } from 'svelte/transition';
+    import { generateSessionToken, createSession } from '$lib/server/auth';
 
 
     let isProfileOpen = false;
@@ -36,20 +38,33 @@
     function toggleLogin() {
         isLoginOpen = !isLoginOpen;
     }
+    
+    async function loginAmpmodder(username: string, plainPassword: string) {
+        const [user] = await db
+          .select()
+          .from(schema.ampmodder)
+          .where(eq(schema.ampmodder.username, username))
+          .limit(1);
+
+        if (!user) return null;
+
+        const valid = await bcrypt.compare(plainPassword, user.password_hash);
+        if (!valid) return null;
+
+        return user;
+    }
+    
 
     async function logIn() {
-        // Implement your login logic here
-        const res = await fetch(`https://ampmod-api.onrender.com/users/${loginUsername}/login`, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({
-                password: loginPassword
-            })
-
-        });
-        localStorage.setItem('sessionToken', (await res.json()).apiToken);
+        const user = await loginAmpmodder(loginUsername, loginPassword);
+        if(!user) {
+            alert("Error Logging In!");
+        } else {
+            const id = user.user_id;
+            const token = generateSessionToken();
+            const user = await createSession(token, id);
+            window.location.reload();
+        }
         window.location.reload(); // Reload to update the UI based on new login state
         // Reset fields after login attempt
         loginUsername = '';
