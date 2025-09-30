@@ -19,7 +19,7 @@
 <svelte:head>
 	<title>AmpMod - An advanced programming language</title>
 </svelte:head>
-<Header>
+<Header />
 <Alert
 	id="please-contribute"
 	button={{
