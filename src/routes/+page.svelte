@@ -4,6 +4,7 @@
 	import Intro from '$lib/intro/Intro.svelte';
 	import ProjectList from '$lib/project-list/ProjectList.svelte';
 	import { isLoggedIn } from '$stores/session';
+	import Header from '$lib/header/Header.svelte';
 	import { Heart, Cat, TriangleAlert } from 'lucide';
 	function isAprilFoolsDay(): boolean {
         const today = new Date();
@@ -18,6 +19,7 @@
 <svelte:head>
 	<title>AmpMod - An advanced programming language</title>
 </svelte:head>
+<Header>
 <Alert
 	id="please-contribute"
 	button={{
