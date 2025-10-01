@@ -56,22 +56,18 @@
     
 
     async function logIn() {
-        const user = await loginAmpmodder(loginUsername, loginPassword);
-        if(!user) {
-            alert("Error Logging In!");
-        } else {
-            const id = user.user_id;
-            const token = generateSessionToken();
-            const user = await createSession(token, id);
-            window.location.reload();
-        }
-        window.location.reload(); // Reload to update the UI based on new login state
-        // Reset fields after login attempt
-        loginUsername = '';
-        loginPassword = '';
-        isLoginOpen = false; // Close the login dropdown after attempting to log in
-        $isLoggedIn = true; // Simulate successful login, replace with actual login logic
+        try {
+            const { success } = await (await fetch('/internalapi/login', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ username: loginUsername, password: loginPassword })
+            })).json();
+            if (success) { $isLoggedIn = true; location.reload(); localStorage.setItem('ssid', success.session_id); } 
+            else alert("Invalid username or password.");
+        } catch { alert("Login error."); }
+        loginUsername = loginPassword = ''; isLoginOpen = false;
     }
+
 
     function closeLogin() {
         isLoginOpen = false;
