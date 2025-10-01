@@ -6,8 +6,6 @@
     import { theme } from '$stores/theme'; // This Is Writable
     import { onMount } from 'svelte';
     import { fade } from 'svelte/transition';
-    import { generateSessionToken, createSession } from '$lib/server/auth';
-
 
     let isProfileOpen = false;
     let isMenuOpen = false;
