@@ -1,0 +1,17 @@
+# Use Node.js official image as a base
+FROM node:20-alpine
+
+# Set working directory for aw3
+WORKDIR /aw3
+
+# Copy package.json and package-lock.json first for caching
+COPY package*.json ./
+
+# Install dependencies
+RUN npm install
+
+# Copy the rest of the app source code
+COPY . .
+
+# Build the app
+RUN npm run build
