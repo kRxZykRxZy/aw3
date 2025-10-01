@@ -3,9 +3,7 @@
     import Logo from './logo.svg';
     import { isLoggedIn, username } from '$stores/session';
     import { Mail, FolderOpen, ChevronDown, MenuIcon } from '@lucide/svelte'; // Removed Sun, Moon as direct toggle is removed
-    import { theme } from '$stores/theme'; // Assuming $stores/theme is a writable store
-    import * as table from '$lib/server/db/schema';
-    import { db } from '$lib/server/db';
+    import { theme } from '$stores/theme'; // This Is Writable
     import { onMount } from 'svelte';
     import { fade } from 'svelte/transition';
     import { generateSessionToken, createSession } from '$lib/server/auth';
@@ -38,22 +36,6 @@
     function toggleLogin() {
         isLoginOpen = !isLoginOpen;
     }
-    
-    async function loginAmpmodder(username: string, plainPassword: string) {
-        const [user] = await db
-          .select()
-          .from(schema.ampmodder)
-          .where(eq(schema.ampmodder.username, username))
-          .limit(1);
-
-        if (!user) return null;
-
-        const valid = await bcrypt.compare(plainPassword, user.password_hash);
-        if (!valid) return null;
-
-        return user;
-    }
-    
 
     async function logIn() {
         try {
@@ -65,7 +47,9 @@
             if (success) { $isLoggedIn = true; location.reload(); localStorage.setItem('ssid', success.session_id); } 
             else alert("Invalid username or password.");
         } catch { alert("Login error."); }
-        loginUsername = loginPassword = ''; isLoginOpen = false;
+        loginUsername = '';
+        loginPassword = ''; 
+        isLoginOpen = false;
     }
 
 
