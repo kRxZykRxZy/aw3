@@ -42,12 +42,10 @@
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ username: loginUsername, password: loginPassword })
             })).json();
-            if (success) { $isLoggedIn = true; location.reload(); localStorage.setItem('ssid', success.session_id); } 
+            if (success) { $isLoggedIn = true; location.reload(); localStorage.setItem('ssid', success.session_id); isLoginOpen = false; }  
             else alert("Invalid username or password.");
-        } catch { alert("Login error."); }
-        loginUsername = '';
-        loginPassword = ''; 
-        isLoginOpen = false;
+
+        } catch { alert("Login error."); } 
     }
 
 
