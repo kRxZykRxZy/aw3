@@ -90,10 +90,6 @@
             if (isMenuOpen && !event.composedPath().some(el => (el as HTMLElement).closest('.hamburger-container'))) {
                 toggleMenu(); // This will close the menu since it's a toggle
             }
-            // Close login dropdown if click is outside
-            if (isLoginOpen && !event.composedPath().some(el => (el as HTMLElement).closest('.login-dropdown'))) {
-                closeLogin();
-            }
         };
 
         document.addEventListener('click', handleClickOutside);
