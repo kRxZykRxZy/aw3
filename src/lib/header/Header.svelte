@@ -167,7 +167,7 @@
                             <input id="login-username" type="text" bind:value={loginUsername} class="p-2 rounded bg-white text-black focus:outline-none" autocomplete="username" placeholder="Username" />
                             <input id="login-password" type="password" bind:value={loginPassword} class="p-2 rounded bg-white text-black focus:outline-none" autocomplete="current-password" placeholder="Password" />
                             <div class="flex items-center justify-between">
-                                <button class="px-4 py-2 rounded bg-white text-accent font-bold hover:bg-gray-100 transition" onclick={logIn()}>Log in</button>
+                                <button class="px-4 py-2 rounded bg-white text-accent font-bold hover:bg-gray-100 transition" onclick={logIn}>Log in</button>
                                 <a href="/login-help" class="font-bold text-white/90 hover:underline">Can't login?</a>
                             </div>
                         </div>
