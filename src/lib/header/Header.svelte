@@ -125,7 +125,7 @@
         </a>
 
         <div class="hidden md:flex items-center gap-2">
-            <a href="/create" class="font-bold px-3 py-2 rounded cursor-pointer whitespace-nowrap header-link hover:bg-black/10">Create</a>
+            <a href="/editor" class="font-bold px-3 py-2 rounded cursor-pointer whitespace-nowrap header-link hover:bg-black/10">Create</a>
             <a href="https://ampmod.codeberg.page/credits.html" class="font-bold px-3 py-2 rounded cursor-pointer whitespace-nowrap header-link hover:bg-black/10">Credits</a>
             <a href="https://ampmod.flarum.cloud" class="font-bold px-3 py-2 rounded cursor-pointer whitespace-nowrap header-link hover:bg-black/10">Discuss</a>
             <a href="https://codeberg.org/AmpMod" class="font-bold px-3 py-2 rounded cursor-pointer whitespace-nowrap header-link hover:bg-black/10">Contribute</a>
@@ -157,7 +157,7 @@
                 <a href="/settings" class="hidden md:block  font-bold px-3 py-2 rounded cursor-pointer whitespace-nowrap header-link hover:bg-black/10">Settings</a>
 
                 <div class="relative login-dropdown">
-                    <button class="font-bold px-3 py-2 rounded cursor-pointer whitespace-nowrap header-link hover:bg-black/10" onclick={toggleLogin} aria-expanded={isLoginOpen} aria-controls="login-menu">Log in</button>
+                    <button class="font-bold px-3 py-2 rounded cursor-pointer whitespace-nowrap header-link hover:bg-black/10" onclick={toggleLogin} aria-controls="login-menu">Log in</button>
                     {#if isLoginOpen}
                         <div class="absolute right-0 top-full mt-2 w-50 max-w-[95vw] bg-accent text-white border border-black/20 rounded shadow-lg z-20 p-6 flex flex-col gap-4" id="login-menu" style="min-width:260px;" transition:fade={{ duration: 100 }}>
                             <input id="login-username" type="text" bind:value={loginUsername} class="p-2 rounded bg-white text-black focus:outline-none" autocomplete="username" placeholder="Username" />
