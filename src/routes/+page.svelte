@@ -1,8 +1,8 @@
 <script lang="ts">
-	import Alert from '$components/alert/Alert.svelte';
-	import Hero from '$components/hero/SiteNewHero.svelte';
-	import Intro from '$components/intro/Intro.svelte';
-	import ProjectList from '$components/project-list/ProjectList.svelte';
+	import Alert from '$lib/alert/Alert.svelte';
+	import Hero from '$lib/hero/SiteNewHero.svelte';
+	import Intro from '$lib/intro/Intro.svelte';
+	import ProjectList from '$lib/project-list/ProjectList.svelte';
 	import { isLoggedIn } from '$stores/session';
 	import { Heart, Cat, TriangleAlert } from 'lucide';
 	function isAprilFoolsDay(): boolean {
