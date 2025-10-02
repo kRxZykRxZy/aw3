@@ -1,6 +1,6 @@
 import type { RequestHandler } from '@sveltejs/kit';
 import { db } from '$lib/server/db';
-import { generateSessionToken } from '$lib/server/auth';
+import { generateSessionToken, createSession } from '$lib/server/auth';
 import bcrypt from 'bcrypt';
 
 export const POST: RequestHandler = async ({ request }) => {
@@ -13,5 +13,6 @@ export const POST: RequestHandler = async ({ request }) => {
 
         const newExpiry = new Date(Date.now() + 7 * 24 * 60 * 60 * 1000);
         const ssid = generateSessionToken();
-        return new Response(JSON.stringify({ message: 'Login successful', apiToken: ssid, user: { id: user.id, username: user.username } }), { status: 200 });
+        createSession(ssid, user.user_id);
+        return new Response(JSON.stringify({ message: 'Login successful', apiToken: ssid, user: { id: user.user_id, username: user.username } }), { status: 200 });
 };
