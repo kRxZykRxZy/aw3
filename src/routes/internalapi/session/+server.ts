@@ -1,8 +1,8 @@
 import type { RequestHandler } from '@sveltejs/kit';
 import { validateSessionToken } from '$lib/server/auth';
 
-const ssid = localStorage.getItem('ssid');
-export const GET: RequestHandler = async () => {
+export const GET: RequestHandler = async (event) => {
+    const ssid = event.cookies.get('auth-session');
     if (ssid) {
         const data = await validateSessionToken(ssid);
         if (data.session) {
