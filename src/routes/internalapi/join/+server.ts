@@ -1,6 +1,6 @@
 import type { RequestHandler } from '@sveltejs/kit';
 import { db } from '$lib/server/db';
-import bcrypt from 'bcrypt';
+import bcrypt from 'bcryptjs';
 
 export const POST: RequestHandler = async ({ request }) => {
     const { username, password, bio, country } = await request.json();
