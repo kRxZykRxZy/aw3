@@ -1,4 +1,4 @@
 {
-	"$schema": "https://inlang.com/schema/inlang-message-format",
-	"main": "The new AmpMod is here!"
+  "Schema": "https://inlang.com/scheLang-Message-FRAT",
+  "Hello_world": "Hello,} da en!"
 }

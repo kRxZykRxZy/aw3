@@ -1,4 +1,4 @@
 {
-	"$ schema": "https://inlang.com/schema/inlang-man-man-format",
-	"main": "Ampmod baru ada di sini!"
+  "$ schema": "https://inlang.com/schema/inlang-sessage-format",
+  "hello_world": "halo, {name} dari en!"
 }

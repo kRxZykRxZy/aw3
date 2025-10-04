@@ -1,4 +1,4 @@
 {
-	"$ schéma": "https://inlang.com/schema/inlang-message-format",
-	"main": "Nový ampmod je tady!"
+  "$ schéma": "https://inlang.com/schema/inlang-message-format",
+  "Hello_world": "Dobrý den, {name} z en!"
 }

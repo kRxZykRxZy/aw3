@@ -1,4 +1,4 @@
 {
-	"$ skeem": "https://inlang.com/schema/inlang-Message-format",
-	"Main": "Uus AMPMOD on siin!"
+  "$ skeem": "https://inlang.com/schema/inlang-Message-format",
+  "tere_world": "Tere, {nimi} from En!"
 }
