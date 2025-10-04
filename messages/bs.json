@@ -1,0 +1,4 @@
+{
+  "$ shema": "https://inlang.com/schema/inlang-message-format",
+  "hello_world": "Zdravo, {ime} iz en!"
+}

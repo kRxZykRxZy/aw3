@@ -1,4 +1,4 @@
 {
-    "$schema": "https://inlang.com/schema/inlang-message-format",
-    "hello_world": "Bonjour, {name}!"
+  "$ schema": "https://inlang.com/schema/inlang-message-format",
+  "hello_world": "Bonjour, {nom} d'En!"
 }
