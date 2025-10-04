@@ -5,7 +5,22 @@ import bcrypt from 'bcryptjs';
 export const POST: RequestHandler = async ({ request }) => {
     const { username, password, bio, country } = await request.json();
     if (!username || !password) return new Response(JSON.stringify({ error: 'Missing credentials' }), { status: 400 });
-
+    if (true) {
+      try {
+        await db.schema
+          .createTable('ampmodder')
+          .ifNotExists()
+          .addColumn('user_id', 'text', col => col.primaryKey())
+          .addColumn('username', 'text', col => col.notNull().unique())
+          .addColumn('password_hash', 'text', col => col.notNull())
+          .addColumn('bio', 'text')
+          .addColumn('joined', 'timestamp')
+          .addColumn('rank', 'integer', col => col.defaultTo(0))
+          .addColumn('ghost', 'boolean', col => col.defaultTo(false))
+          .addColumn('userMETA', 'text')
+          .execute();
+      }
+    }
     const exists = await db.selectFrom('ampmodder').selectAll().where('username', '=', username).executeTakeFirst();
     if (exists) return new Response(JSON.stringify({ error: 'Username taken' }), { status: 409 });
 
