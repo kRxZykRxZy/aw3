@@ -1,6 +1,6 @@
 import type { RequestHandler } from '@sveltejs/kit';
 import { db } from '$lib/server/db';
-import { ampmodder } from '$lib/server/db/schema';
+import { user } from '$lib/server/db/schema';
 import bcrypt from 'bcryptjs';
 import { eq, count } from 'drizzle-orm';
 
