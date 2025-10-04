@@ -210,7 +210,7 @@
             email: email || null
         })
     });
-    const data = res.json();
+    const data = await res.json();
     // Actual join logic would go here, e.g., sending data to a server
     showMessageBox();
     window.location.href = '/';
