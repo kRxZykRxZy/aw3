@@ -33,7 +33,7 @@ export const POST: RequestHandler = async ({ request }) => {
   		return new Response(JSON.stringify({ message: 'Registration successful', user: { id: user_id, username } }), { status: 201 });
   } catch(error) {
       console.log(error);
-      return new Response(JSON.stringify({ error: error }), { status: 500 });
+      return new Response(JSON.stringify({ error: "Internal Server Error. Please Refresh The Page To Try Again. If This Still Occurs Contact Us On <a href="mailto:ampelectrecuted@gmail.com">Our Email </a>" }), { status: 500 });
   }
   };
                                                                                                             
