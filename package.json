@@ -59,6 +59,7 @@
 		"mdsvex": "^0.12.6",
 		"playwright": "^1.55.1",
 		"pg": "^8.11.1",
+		"bcryptjs": "^2.4.3",
 		"prettier": "^3.6.2",
 		"prettier-plugin-svelte": "^3.4.0",
 		"prettier-plugin-tailwindcss": "^0.6.14",
