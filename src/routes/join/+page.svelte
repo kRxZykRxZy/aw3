@@ -212,7 +212,7 @@
     });
     const data = await res.json();
     // Actual join logic would go here, e.g., sending data to a server
-    showMessageBox();
+    showMessageBox(data.message || data.error);
     window.location.href = '/';
     // In a real app, you'd redirect or log the user in here
   }
