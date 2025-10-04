@@ -3,13 +3,9 @@
     import Logo from './logo.svg';
     import { isLoggedIn, username } from '$stores/session';
     import { Mail, FolderOpen, ChevronDown, MenuIcon } from '@lucide/svelte'; // Removed Sun, Moon as direct toggle is removed
-    import { theme } from '$stores/theme'; // Assuming $stores/theme is a writable store
-    import * as table from '$lib/server/db/schema';
-    import { db } from '$lib/server/db';
+    import { theme } from '$stores/theme'; // This Is Writable
     import { onMount } from 'svelte';
     import { fade } from 'svelte/transition';
-    import { generateSessionToken, createSession } from '$lib/server/auth';
-
 
     let isProfileOpen = false;
     let isMenuOpen = false;
@@ -38,40 +34,20 @@
     function toggleLogin() {
         isLoginOpen = !isLoginOpen;
     }
-    
-    async function loginAmpmodder(username: string, plainPassword: string) {
-        const [user] = await db
-          .select()
-          .from(schema.ampmodder)
-          .where(eq(schema.ampmodder.username, username))
-          .limit(1);
-
-        if (!user) return null;
-
-        const valid = await bcrypt.compare(plainPassword, user.password_hash);
-        if (!valid) return null;
-
-        return user;
-    }
-    
 
     async function logIn() {
-        const user = await loginAmpmodder(loginUsername, loginPassword);
-        if(!user) {
-            alert("Error Logging In!");
-        } else {
-            const id = user.user_id;
-            const token = generateSessionToken();
-            const user = await createSession(token, id);
-            window.location.reload();
-        }
-        window.location.reload(); // Reload to update the UI based on new login state
-        // Reset fields after login attempt
-        loginUsername = '';
-        loginPassword = '';
-        isLoginOpen = false; // Close the login dropdown after attempting to log in
-        $isLoggedIn = true; // Simulate successful login, replace with actual login logic
+        try {
+            const { success } = await (await fetch('/internalapi/login', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ username: loginUsername, password: loginPassword })
+            })).json();
+            if (success) { $isLoggedIn = true; location.reload(); localStorage.setItem('ssid', success.session_id); isLoginOpen = false; }  
+            else alert("Invalid username or password.");
+
+        } catch { alert("Login error."); } 
     }
+
 
     function closeLogin() {
         isLoginOpen = false;
@@ -114,10 +90,6 @@
             if (isMenuOpen && !event.composedPath().some(el => (el as HTMLElement).closest('.hamburger-container'))) {
                 toggleMenu(); // This will close the menu since it's a toggle
             }
-            // Close login dropdown if click is outside
-            if (isLoginOpen && !event.composedPath().some(el => (el as HTMLElement).closest('.login-dropdown'))) {
-                closeLogin();
-            }
         };
 
         document.addEventListener('click', handleClickOutside);
@@ -153,7 +125,7 @@
         </a>
 
         <div class="hidden md:flex items-center gap-2">
-            <a href="/create" class="font-bold px-3 py-2 rounded cursor-pointer whitespace-nowrap header-link hover:bg-black/10">Create</a>
+            <a href="/editor" class="font-bold px-3 py-2 rounded cursor-pointer whitespace-nowrap header-link hover:bg-black/10">Create</a>
             <a href="https://ampmod.codeberg.page/credits.html" class="font-bold px-3 py-2 rounded cursor-pointer whitespace-nowrap header-link hover:bg-black/10">Credits</a>
             <a href="https://ampmod.flarum.cloud" class="font-bold px-3 py-2 rounded cursor-pointer whitespace-nowrap header-link hover:bg-black/10">Discuss</a>
             <a href="https://codeberg.org/AmpMod" class="font-bold px-3 py-2 rounded cursor-pointer whitespace-nowrap header-link hover:bg-black/10">Contribute</a>
@@ -185,13 +157,13 @@
                 <a href="/settings" class="hidden md:block  font-bold px-3 py-2 rounded cursor-pointer whitespace-nowrap header-link hover:bg-black/10">Settings</a>
 
                 <div class="relative login-dropdown">
-                    <button class="font-bold px-3 py-2 rounded cursor-pointer whitespace-nowrap header-link hover:bg-black/10" onclick={toggleLogin} aria-expanded={isLoginOpen} aria-controls="login-menu">Log in</button>
+                    <button class="font-bold px-3 py-2 rounded cursor-pointer whitespace-nowrap header-link hover:bg-black/10" onclick={toggleLogin} aria-controls="login-menu">Log in</button>
                     {#if isLoginOpen}
                         <div class="absolute right-0 top-full mt-2 w-50 max-w-[95vw] bg-accent text-white border border-black/20 rounded shadow-lg z-20 p-6 flex flex-col gap-4" id="login-menu" style="min-width:260px;" transition:fade={{ duration: 100 }}>
                             <input id="login-username" type="text" bind:value={loginUsername} class="p-2 rounded bg-white text-black focus:outline-none" autocomplete="username" placeholder="Username" />
                             <input id="login-password" type="password" bind:value={loginPassword} class="p-2 rounded bg-white text-black focus:outline-none" autocomplete="current-password" placeholder="Password" />
                             <div class="flex items-center justify-between">
-                                <button class="px-4 py-2 rounded bg-white text-accent font-bold hover:bg-gray-100 transition" onclick={logIn()}>Log in</button>
+                                <button class="px-4 py-2 rounded bg-white text-accent font-bold hover:bg-gray-100 transition" onclick={logIn}>Log in</button>
                                 <a href="/login-help" class="font-bold text-white/90 hover:underline">Can't login?</a>
                             </div>
                         </div>
