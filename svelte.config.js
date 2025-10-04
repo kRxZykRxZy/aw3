@@ -22,7 +22,7 @@ const config = {
 		alias: {
 			$lib: 'src/lib',
 			$stores: 'src/stores'
-		},
+		}
 	},
 	extensions: ['.svelte', '.svx']
 };

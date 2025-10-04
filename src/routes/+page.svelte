@@ -6,12 +6,12 @@
 	import { isLoggedIn } from '$stores/session';
 	import { Heart, Cat, TriangleAlert } from 'lucide';
 	function isAprilFoolsDay(): boolean {
-        const date = new Date();
-        return date.getMonth() === 3 && date.getDate() === 1; // Month 3 is April (0-indexed)
-    }
+		const date = new Date();
+		return date.getMonth() === 3 && date.getDate() === 1; // Month 3 is April (0-indexed)
+	}
 	function getYearsSince2025() {
-	const currentYear = new Date().getFullYear();
-	return currentYear - 2025;
+		const currentYear = new Date().getFullYear();
+		return currentYear - 2025;
 	}
 </script>
 
@@ -47,29 +47,29 @@
 <ProjectList title="Most recent projects" />
 
 <style>
-   .intro-layout {
-	   display: flex;
-	   gap: 20px;
-	   max-width: 950px;
-	   margin: auto;
-	   align-items: center;
-	   background-color: var(--background-color);
-	   color: var(--text-color);
-   }
+	.intro-layout {
+		display: flex;
+		gap: 20px;
+		max-width: 950px;
+		margin: auto;
+		align-items: center;
+		background-color: var(--background-color);
+		color: var(--text-color);
+	}
 
-   .intro-section {
-	   flex: 1;
-	   display: block;
-   }
+	.intro-section {
+		flex: 1;
+		display: block;
+	}
 
-   .news-placeholder {
-	   flex: 1;
-	   padding: 6px 20px;
-	   border: 1px solid #dcdcdc;
-	   border-radius: 10px;
-	   margin: 10px;
-	   display: block;
-	   height: 22em;
-	   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-   }
+	.news-placeholder {
+		flex: 1;
+		padding: 6px 20px;
+		border: 1px solid #dcdcdc;
+		border-radius: 10px;
+		margin: 10px;
+		display: block;
+		height: 22em;
+		font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	}
 </style>
