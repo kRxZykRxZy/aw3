@@ -1,4 +1,4 @@
-CREATE TABLE "projects" (
+CREATE TABLE "project" (
 	"id" text PRIMARY KEY NOT NULL,
 	"title" varchar(500),
 	"created" timestamp DEFAULT now() NOT NULL,
@@ -33,5 +33,5 @@ CREATE TABLE "ampmodder" (
 	CONSTRAINT "ampmodder_username_unique" UNIQUE("username")
 );
 --> statement-breakpoint
-ALTER TABLE "projects" ADD CONSTRAINT "project_creator_ampmodder_user_id_fk" FOREIGN KEY ("creator") REFERENCES "public"."ampmodder"("user_id") ON DELETE no action ON UPDATE no action;--> statement-breakpoint
+ALTER TABLE "project" ADD CONSTRAINT "project_creator_ampmodder_user_id_fk" FOREIGN KEY ("creator") REFERENCES "public"."ampmodder"("user_id") ON DELETE no action ON UPDATE no action;--> statement-breakpoint
 ALTER TABLE "session" ADD CONSTRAINT "session_user_id_ampmodder_user_id_fk" FOREIGN KEY ("user_id") REFERENCES "public"."ampmodder"("user_id") ON DELETE no action ON UPDATE no action;

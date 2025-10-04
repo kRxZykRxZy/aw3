@@ -6,8 +6,8 @@
 	import { isLoggedIn } from '$stores/session';
 	import { Heart, Cat, TriangleAlert } from 'lucide';
 	function isAprilFoolsDay(): boolean {
-        const today = new Date();
-        return today.getMonth() === 3 && today.getDate() === 1; // Month 3 is April (0-indexed)
+        const date = new Date();
+        return date.getMonth() === 3 && date.getDate() === 1; // Month 3 is April (0-indexed)
     }
 	function getYearsSince2025() {
 	const currentYear = new Date().getFullYear();

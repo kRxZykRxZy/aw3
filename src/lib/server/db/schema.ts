@@ -22,8 +22,7 @@ export const user = pgTable('ampmodder', {
 	bannedType: text('bannedType').default('temporary'),
 	bannedReason: text('bannedReason').default('You have been banned for breaking the guidelines.'), // Mods should change this
 	bannedExpiry: timestamp('bannedExpiry', { mode: 'date' }).defaultNow().notNull(),
-	ghost: boolean('ghost').default(false), // ghost = whether account profile is accessible
-	userMETA: json('userMETA')
+	ghost: boolean('ghost').default(false) // ghost = whether account profile is accessible
 });
 
 export const project = pgTable('project', {
@@ -37,8 +36,7 @@ export const project = pgTable('project', {
 		.notNull()
 		.references(() => user.id),
 	ghost: boolean('ghost').default(true),
-	projectJson: json('projectJson'),
-	projectMeta: json('projectMeta')
+	projectJson: json('projectJson')
 });
 
 export const session = pgTable('session', {
