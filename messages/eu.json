@@ -1,4 +1,4 @@
 {
-  "$ schema": "https://inlang.com/schema/inlang-message-format",
-  "hello_world": "Kaixo, {name} en!"
+	"$ eskema": "https://inlang.com/schema/inlang-message-format",
+	"nagusia": "AMPMOD berria hemen da!"
 }

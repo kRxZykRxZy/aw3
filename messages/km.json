@@ -1,4 +1,4 @@
 {
-  "$ គ្រោងការណ៍": "https://inlang.com/schema/inlang-message-format",
-  "ហេឡូ>": "សួស្តី {ឈ្មោះ} ពី en!"
+	"$schema": "https://inlang.com/schema/inlang-message-format",
+	"main": "The new AmpMod is here!"
 }

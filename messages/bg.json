@@ -1,4 +1,4 @@
 {
-  "$ схема": "https://inlang.com/schema/inlang-message-format",
-  "hello_world": "здравей, {име} от en!"
+	"$ схема": "https://inlang.com/schema/inlang-message-format",
+	"main": "Новият ampmod е тук!"
 }

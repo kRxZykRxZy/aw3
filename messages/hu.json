@@ -1,4 +1,4 @@
 {
-  "$ séma": "https://inlang.com/schema/inlang-message-format",
-  "hello_world": "hello, {név} az en!"
+	"$ séma": "https://inlang.com/schema/inlang-message-format",
+	"Main": "Az új ampmod itt van!"
 }

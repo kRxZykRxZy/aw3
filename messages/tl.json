@@ -1,4 +1,4 @@
 {
-  "$ schema": "https://inlang.com/schema/inlang-message-format",
-  "hello_world": "hello, {name} mula sa en!"
+	"$ schema": "https://inlang.com/schema/inlang-message-format",
+	"pangunahing": "Ang bagong ampmod ay narito!"
 }
