@@ -1,5 +1,4 @@
 import { writable } from 'svelte/store';
-import { timestamp } from 'drizzle-orm/gel-core';
 
 export const isLoggedIn = writable(false);
 export const isBanned = writable(false);

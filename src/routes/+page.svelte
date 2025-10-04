@@ -4,7 +4,7 @@
 	import Intro from '$lib/intro/Intro.svelte';
 	import ProjectList from '$lib/project-list/ProjectList.svelte';
 	import { isLoggedIn } from '$stores/session';
-	import { Heart, Cat, TriangleAlert } from 'lucide';
+	import { Heart } from 'lucide';
 	function isAprilFoolsDay(): boolean {
 		const date = new Date();
 		return date.getMonth() === 3 && date.getDate() === 1; // Month 3 is April (0-indexed)
