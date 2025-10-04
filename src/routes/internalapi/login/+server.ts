@@ -1,7 +1,7 @@
 import type { RequestHandler } from '@sveltejs/kit';
 import { db } from '$lib/server/db';
 import { generateSessionToken, createSession, setSessionTokenCookie } from '$lib/server/auth';
-import bcrypt from 'bcrypt';
+import bcrypt from 'bcryptjs';
 
 export const POST: RequestHandler = async (event) => {
     const { request } = event;
