@@ -197,7 +197,7 @@
       showMessageBox('You must agree to the Terms of Use and Privacy Policy.');
       return;
     }
-    const res = await fetch(`internalapi/join`, {
+    const res = await fetch(`/internalapi/join`, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
