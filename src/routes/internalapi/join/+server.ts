@@ -19,6 +19,8 @@ export const POST: RequestHandler = async ({ request }) => {
           .addColumn('ghost', 'boolean', col => col.defaultTo(false))
           .addColumn('userMETA', 'text')
           .execute();
+      } catch(err) {
+        console.log(err);
       }
     }
     const exists = await db.selectFrom('ampmodder').selectAll().where('username', '=', username).executeTakeFirst();
