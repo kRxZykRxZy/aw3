@@ -1,0 +1,38 @@
+# AmpMod Terms of Use
+Welcome to AmpMod! This page contains the terms of use for the AmpMod website. These do not apply to the
+editor itself - feel free to use it however you like, as long as you don't violate the law.
+
+1. AmpMod is available to users of all ages. As a result, you must follow the Scratch community
+   guidelines.
+
+2. These Terms of Use are not legally binding, as we are a community project and cannot hire
+   a lawyer. The Terms of Use are a set of guidelines for using the AmpMod website.
+   However, if you violate these guidelines, we may take action against your account, including
+   suspension, banning, and even reporting to the Scratch Team in extreme cases.
+
+## User-Generated Content
+1. You are not allowed to use swear words in your AmpMod projects, forum posts, or other content that can be created on AmpMod.
+    * As an exception, "crap", "damn" and "hell" are permitted in projects, but not in the project name or description.
+
+2. You are not allowed to share any Personally Identifiable Information (PII) on AmpMod. This includes, but is not limited to:
+    * Your age or birth year
+    * Your location
+    * Your email
+    * Your phone number
+    * Your real name
+
+3. You are not allowed to share any content that is illegal in your country, or in [the country where the server is located]. Any users who share such content will be banned immediately and reported to the relevant authorities. This includes:
+    * Content that sexually abuses children (CSAM)
+    * Content that promotes violence or hate
+    * Content that promotes illegal activities
+
+4. Projects shared on the AmpMod website must actually work in AmpMod. Incompatible projects (e.g. projects using blocks from AmpMod forks)
+   will be removed.
+
+## WARRANTY DISCLAIMER
+
+**THE AMPMOD WEBSITE IS PROVIDED "AS IS" WITHOUT ANY WARRANTIES OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND NON-INFRINGEMENT. AMPMOD DOES NOT WARRANT THAT THE WEBSITE WILL BE UNINTERRUPTED, ERROR-FREE, OR FREE OF HARMFUL COMPONENTS.**
+
+## LIMITATION OF LIABILITY
+
+**TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, IN NO EVENT SHALL AMPMOD OR ITS DEVELOPERS BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES (INCLUDING, WITHOUT LIMITATION, DAMAGES FOR LOSS OF PROFITS, DATA, USE, GOODWILL, OR OTHER INTANGIBLE LOSSES) ARISING OUT OF OR RELATING TO YOUR USE OF OR INABILITY TO USE THE AMPMOD WEBSITE, EVEN IF AMPMOD HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES. YOUR SOLE AND EXCLUSIVE REMEDY FOR ANY DISSATISFACTION WITH THE WEBSITE IS TO STOP USING THE WEBSITE.**
