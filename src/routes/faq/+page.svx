@@ -1,0 +1,68 @@
+---
+title: AmpMod FAQ
+---
+
+## General
+
+#### What is AmpMod?
+
+AmpMod is a programming language designed for intermediate and expert
+Scratch users. It adds many features to Scratch, such as arrays.
+To learn more, see the [About page](/about).
+
+#### How do I use AmpMod?
+
+You can use AmpMod by going to the [editor](https://ampmod.codeberg.page).
+If you are new to Scratch, we recommend you start with the
+[Scratch tutorial](https://scratch.mit.edu/projects/editor/?tutorial=getStarted).
+AmpMod is not recommended for beginners, as it is more complex than Scratch.
+
+#### Is there a desktop app for AmpMod?
+
+There is currently no desktop app for AmpMod. However, one is in
+development.
+
+#### Do I need an account to use AmpMod?
+
+No, you do not need an account to use AmpMod. However, you will need
+an account to share your projects.
+
+#### Can I share projects?
+
+Yes, you can share projects. You can do this by clicking the "Share"
+button in the editor. This will open a page where you enter the
+instructions and notes of your project.
+
+#### Can I unshare projects?
+
+Projects cannot be temporarily unshared, but they can be deleted.
+A workaround is to save your project as a file, then delete it.
+
+## Developers
+
+#### Is AmpMod open source?
+
+Yes. The source code is available on [Codeberg](https://codeberg.org/ampmod).
+You are welcome to contribute to the project.
+
+#### How does AmpMod work?
+
+AmpMod compiles to JavaScript, unlike Scratch, which is interpreted.
+This means that AmpMod is faster than Scratch.
+
+## Privacy
+
+#### Does AmpMod collect any data?
+
+No personal data is collected by AmpMod. However, we use cookie-less
+analytics to track usage of the site. This is done to improve the
+user experience. There will be an option to disable this in the future.
+
+#### Does AmpMod use cookies?
+
+Only essential cookies are used by AmpMod.
+
+#### Does AmpMod require JavaScript?
+
+Yes, AmpMod requires JavaScript to run. The website is partially
+functional without JavaScript, but the editor will not work.

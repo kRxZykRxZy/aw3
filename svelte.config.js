@@ -20,6 +20,7 @@ const config = {
 		adapter: adapter(),
 		outDir: 'build',
 		alias: {
+			$components: 'src/lib',
 			$lib: 'src/lib',
 			$stores: 'src/stores'
 		}
