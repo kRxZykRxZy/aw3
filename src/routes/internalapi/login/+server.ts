@@ -19,8 +19,8 @@ export const POST: RequestHandler = async (event) => {
 
 	const newExpiry = new Date(Date.now() + 7 * 24 * 60 * 60 * 1000);
 	const ssid = generateSessionToken();
-	createSession(ssid, user.user_id);
-	setSessionTokenCookie(event, ssid, newExpiry);
+	createSession(ssid, user.user_id); // create a session in the session table
+	setSessionTokenCookie(event, ssid, newExpiry); // create a non-Http cookie
 	return new Response(
 		JSON.stringify({
 			message: 'Login successful',
