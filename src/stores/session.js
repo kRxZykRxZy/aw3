@@ -1,4 +1,5 @@
 import { writable } from 'svelte/store';
+import { onMount } from 'svelte';
 
 export const isLoggedIn = writable(false);
 export const isBanned = writable(false);
@@ -18,7 +19,7 @@ async function getSession() {
     }
 }
 
-window.onload = async function() {
+onMount(async () => {
     const data = await getSession();
     if (data) {
         userData.set(data);
@@ -26,10 +27,10 @@ window.onload = async function() {
         isLoggedIn.set(data ? true : false);
         isBanned.set(data.isBanned ? true : false);
     } else {
-        userData.set("");
-        username.set("");
+        userData.set(null);
+        username.set(null);
         isLoggedIn.set(false);
         isBanned.set(false);
     }
 
-}
+});
