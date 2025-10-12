@@ -1,4 +1,4 @@
-site available at https://ampmod-front.vercel.app
+site available at https://ampmod.vercel.app
 
 # Translations
 

@@ -3,10 +3,13 @@
 @import 'tailwindcss';
 @plugin "@tailwindcss/typography";
 
+@plugin '@fontsource/inter'
+
 @custom-variant dark (&:where(.dark, .dark *));
 
+
 @theme {
-	--font-sans: 'Inter Variable', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	--font-sans: 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 	--color-background: white;
 	--color-background-dark: #121216;
 
