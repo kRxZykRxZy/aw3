@@ -4,6 +4,9 @@
 	"version": "0.0.1",
 	"type": "module",
 	"license": "AGPL-3.0-or-later",
+	"engines": {
+      "node": "18.x"
+    },
 	"scripts": {
 		"dev": "vite dev",
 		"build": "vite build",
