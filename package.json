@@ -4,12 +4,9 @@
 	"version": "0.0.1",
 	"type": "module",
 	"license": "AGPL-3.0-or-later",
-	"engines": {
-      "node": "22.x"
-    },
 	"scripts": {
 		"dev": "vite dev",
-		"build": "git clone https://codeberg.org/ampmod/ampmod fjed && cd fjed && corepack enable && corepack prepare pnpm@10.18.1 --activate && pnpm install --no-frozen-lockfile && pnpm run ci-build && cd .. && vite build && cp -R build fjed/packages/gui/build",
+		"build": "vite build",
 		"preview": "vite preview",
 		"prepare": "svelte-kit sync || echo ''",
 		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
