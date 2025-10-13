@@ -365,7 +365,7 @@
 				{#if step === 2}
 					<div class="animate-fade-in flex flex-col">
 						<label for="username" class="mb-2 font-medium">
-							Username (don't use your real name)
+							{#if username === "42"}Answer to the universe, life, and everything{:else}Username (don't use your real name){/if}
 						</label>
 						<input
 							id="username"
@@ -381,7 +381,7 @@
 								{#if isUsernameValidLength(username)}<Check color="#22c55e" size={18} />{:else}<X
 										color="#ef4444"
 										size={18}
-									/>{/if} Be 3-20 characters long
+									/>{/if}
 							</li>
 							<li
 								class:valid={doesUsernameContainValidChars(username)}
