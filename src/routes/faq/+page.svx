@@ -6,8 +6,7 @@ title: AmpMod FAQ
 
 #### What is AmpMod?
 
-AmpMod is a programming language designed for intermediate and expert
-Scratch users. It adds many features to Scratch, such as arrays.
+AmpMod is an open source programming language designed for intermediate and expert coders. It adds many features to Scratch, such as arrays.
 To learn more, see the [About page](/about).
 
 #### How do I use AmpMod?
