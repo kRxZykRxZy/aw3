@@ -17,19 +17,28 @@
 	let loading = true;
 	let error: string | null = null;
 
+	let proj = [];
 	async function fetchProjects(): Promise<ProjectType[]> {
 		// In a real application, you would replace this with an actual API call
 		// For demonstration, we use a Promise with setTimeout to simulate network latency
+		const res = await fetch('/internalapi/featured_projects');
+		const data = await res.json();
+		projects.forEach(project => {
+			proj[project.id]["id"] = project.id;
+			proj[project.id]["title"] = project.title || 'Untitled Project';
+			proj[project.id]["author"] = project.author || 'No Author';              // fallback Url
+			proj[project.id]["thumbnailUrl"] = project.thumbnail || 'https://cdn2.scratch.mit.edu/get_image/project/1_270x210.png';
+		});
 		return new Promise((resolve) => {
 			setTimeout(() => {
-				const fakeProjects: ProjectType[] = [
+				const ProjectList: ProjectType[] = [
 					{
-						id: 1,
-						title: 'NYAN CAT DOGEING GAME',
-						author: 'COYOTITDOG',
+						id: proj[1]["id"],
+						title: proj[1]["title"],
+						author: proj[1]["author"],
 						// IMPORTANT: Replace with actual project thumbnail URLs when ready
 						// For now, these placeholders are more descriptive and visually varied
-						thumbnailUrl: 'https://cdn2.scratch.mit.edu/get_image/project/3_270x210.png' // Example Scratch-like placeholder
+						thumbnailUrl: proj[1]["thumbnailUrl"] // Example Scratch-like placeholder
 					},
 					{
 						id: 2,
