@@ -2,11 +2,11 @@ import { error } from '@sveltejs/kit';
 import type { PageServerLoad } from './$types';
 
 export const load: PageServerLoad = async ({ url }) => {
-  const type = url.searchParams.get('type');
+	const type = url.searchParams.get('type');
 
-  if (type) {
-    error(type, 'Error');
-  }
+	if (type) {
+		error(type, 'Error');
+	}
 
-  error(404, 'Not Found');
+	error(404, 'Not Found');
 };

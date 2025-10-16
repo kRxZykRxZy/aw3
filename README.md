@@ -4,7 +4,6 @@ site available at https://ampmod.vercel.app
 
 [![Translation status](https://translate.codeberg.org/widget/ampmod/aw3/svg-badge.svg?native=1)](https://translate.codeberg.org/engage/ampmod/)
 
-
 # sv
 
 Everything you need to build a Svelte project, powered by [`sv`](https://github.com/sveltejs/cli).

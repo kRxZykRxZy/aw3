@@ -49,8 +49,8 @@
 		text-overflow: ellipsis;
 		font-size: 0.75rem;
 		text-align: center;
-		white-space: nowrap;  /* Prevents text from wrapping */
-		overflow: hidden;     /* Hides any content that overflows the box */
+		white-space: nowrap; /* Prevents text from wrapping */
+		overflow: hidden; /* Hides any content that overflows the box */
 		text-overflow: ellipsis; /* Displays an ellipsis (...) for truncated text */
 	}
 	.user:hover {

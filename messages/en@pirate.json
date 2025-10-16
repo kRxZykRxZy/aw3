@@ -1,4 +1,4 @@
 {
-    "main": "Arr, Welcome to the new AmpMod!",
-    "$schema": "https://inlang.com/schema/inlang-message-format"
+	"main": "Arr, Welcome to the new AmpMod!",
+	"$schema": "https://inlang.com/schema/inlang-message-format"
 }
