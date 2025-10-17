@@ -24,10 +24,6 @@ export const POST: RequestHandler = async ({ url, request, cookies }) => {
 			public: true,
 			comments_allowed: true,
 			is_published: true,
-			username: user.username,
-			collaborators: [
-				user.username
-			]
 			author: {
 				id: user.user_id,
 				username: user.username,
@@ -39,6 +35,7 @@ export const POST: RequestHandler = async ({ url, request, cookies }) => {
 				}
 			},
 			image: '',
+			images: {},
 			history: { created: now, modified: now, shared: now },
 			stats: { views: 0, loves: 0, favorites: 0, remixes: 0 },
 			remix: { parent: null, root: null },
