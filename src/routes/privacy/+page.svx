@@ -1,0 +1,32 @@
+---
+title: AmpMod Privacy Policy
+---
+
+*Last updated: 2025-08-23*
+
+The AmpMod project respects your privacy. Every website says this, but we mean it.
+For the purpose of transparency, here is a list of every place where and how your data may be used.
+
+## AmpMod website
+The AmpMod website does not collect any personal information.
+The only data collected is anonymous usage data, which is used to improve the website.
+These analytics do not use cookies and do not track you across other websites.
+
+A cookie is used to store your session so that you can stay logged in.
+This cookie is not used for any other purpose and is not shared with any third parties.
+
+## AmpMod editor
+The AmpMod editor does not collect any personal information.
+However, the editor can load projects from Scratch's servers. We ask you to read Scratch's
+[privacy policy](https://scratch.mit.edu/privacy_policy) to understand how your data is used when you load a project from Scratch.
+
+The AmpMod editor is hosted on Codeberg. See their [privacy policy](https://codeberg.org/codeberg/org/src/PrivacyPolicy.md).
+<!-- TODO: The editor might be moved to our own server but this is unclear --> Mirrors not hosted on Codeberg may have different privacy policies.
+
+## AmpMod manual and dev docs
+The AmpMod manual and developer documentation are hosted on Codeberg.
+See their [privacy policy](https://codeberg.org/codeberg/org/src/PrivacyPolicy.md).
+
+## Source code
+The source code of all AmpMod software is hosted on Codeberg.
+See their [privacy policy](https://codeberg.org/codeberg/org/src/PrivacyPolicy.md).

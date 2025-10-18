@@ -1,0 +1,231 @@
+---
+title: Project Uploading Guidelines
+---
+<script>
+    import Spoiler from '$components/spoiler/Spoiler.svelte';
+</script>
+*TL;DR: Keep it appropriate. This isn't a place to get away and break the Scratch guidelines.*
+
+These are the guidelines for uploading projects to the official AmpMod website.
+Uploading projects against these guidelines may result in them being removed.
+
+**These guidelines only apply to uploads to the official AmpMod website.** If you
+are packaging your project and uploading to other sites, follow their guidelines instead.
+
+You should also read the [Terms of Use](/terms).
+
+** Things that could possibly get you IP banned:**
+* Posting anything illegal in your region, [SERVER HOST COUNTRY], or under international law
+* Spamming the API with requests (e.g. for uploading non-AmpMod projects)
+
+## How to report projects/users
+You can report a project by clicking the red "Report" button below the social action
+buttons (love/propose/views) on a project.
+
+You can report a user by clicking the red "Report" button at the bottom of their profile page.
+
+Please use these buttons to report projects/users as it makes moderation quicker
+and easier for us. If you cannot report a project or user with these buttons for any
+reason, you can contact us with the methods below.
+
+If someone is in immediate danger of harm, please contact your local emergency services.
+
+Please do not report projects or users via public communication such as Scratch
+comments or forums. Please only report via the Report form.
+
+Spam, fake, or troll reports can result in a ban. Please read the guidelines carefully
+before reporting a project or user.
+
+AmpMod is provided as-is according to the [Terms of Use](/terms) and the open-source licences
+used by AmpMod.
+
+## Contacting AmpMod
+You can contact AmpMod developers through their Scratch profile or ask questions on the
+[AmpMod forums](https://ampmod.flarum.cloud) or the [AmpMod forum topic on Scratch](https://scratch.mit.edu/discuss/topic/806311/).
+
+**Do not contact AmpMod to report projects or users.** Use the report buttons instead.
+
+----
+
+## Base requirements
+Blank projects or projects that only contain a default sprite with no scripts will be removed.
+These take up valuable space on our servers. This does not apply to projects with meaningful content
+like art or a message from the creator. This also does not apply to projects containing useful
+content for project creators, like a sound pack, font pack, extension pack, or maybe even a
+template.
+
+Each asset in your project combined should be less than 20MB, and the project.json file must be
+less than 10MB. This is to save storage space. There are technical restrictions to automatically
+prevent uploading such projects, but there is no punishment for this.
+
+All projects are licensed under the [Creative Commons Attribution-ShareAlike 4.0](https://creativecommons.org/licenses/by-sa/4.0/)
+licence (except for exact reuploads of Scratch projects - more on that later.) Remixes that do not
+make any meaningful changes to the original project will be removed.
+
+## Profanity
+Very mild swears (specifically the ones allowed on Scratch: <Spoiler>crap, damn, hell</Spoiler>) are not allowed in the project name and description, but
+are allowed in projects as long as there is a warning in the description and/or the start of the project,
+and the profanity is used infrequently (e.g. max twice per sentence, don't use it in every sentence).
+However, your project may be hidden from search results.
+<!-- Should we reconsider allowing very mild swear words? -->
+
+Any other profanity is not allowed anywhere on the AmpMod website.
+
+You also may not include profanity checks inside your code, as ironically, this leads to including
+profanity in the code of your project.
+
+## Personal information
+You may not share or ask for personal information on the AmpMod website. This includes, but is not
+limited to:
+* Your age or birth year
+* Your location
+* Your email
+* Your phone number
+* Your real name
+
+Sharing usernames on other sites is generally allowed as long as there is no private messaging
+functionality on the site and your profile does not contain inappropriate content.
+
+For safety reasons, you are not allowed to use your face in your profile picture or in your
+projects, but stylized drawings of your face are allowed. The only exception is if your project
+uses the video sensing extension or if it is related to it, but the project must not be a face
+reveal.
+
+## Self harm
+<!-- Eager loading is enabled, so the page will be loaded immediately when these guidelines are viewed.
+     This is for safety reasons, so that if someone is in danger of self harm, they can get help immediately. -->
+<div data-sveltekit-preload-code="eager">
+    <p>You may not promote, encourage or reference self-harm, else your account will be deleted.
+    <strong>IF YOU ARE IN DANGER OF SELF HARM, PLEASE CONTACT <a href="/banned/mental">ONE OF THESE RESOURCES</a>.</strong></p>
+</div>
+
+## Illegal content
+Content that is illegal, promotes illegal acts, or violates any local, national, or international law is strictly
+prohibited and will result in a permanent ban.
+
+## Disturbing content
+Content that intentionally triggers phobias such as arachnophobia **must** include a warning at the start of the project
+and/or in the project notes. If not intentional, you may not receive any punishment other than your
+project being removed.
+
+Extremely disturbing content such as graphic depictions of violence, torture, or other
+disturbing acts is not allowed. This includes projects that glorify or promote such acts. You will be
+banned if you upload such content.
+
+## Weapons
+Extremely unrealistic/water/laser/Nerf guns are allowed. Realistic guns aren't.
+If you look at your gun, think about what sound it makes. If it makes "bang" instead of "pew" sounds,
+it isn't allowed.
+
+Knives are not allowed to be used as weaponry but can be used as a kitchen utensil.
+
+We are generally fine with swords, bombs, whips, magic, and physical combat, as long as they are not
+used in a way that glorifies violence or promotes harm to others, and there is no blood or gore
+drawn from the weapon.
+
+## Blood / Gore
+Blood and gore are not allowed on the AmpMod website. In addition, "Sprunki" Incredibox-type projects,
+which revolve around blood and gore, are not allowed.
+<!-- Do we need to specify Sprunki? What if people misread this and think all Incredibox-type projects are not allowed? -->
+
+## Extensions
+Extensions are scripts that allow adding more blocks to the AmpMod editor. There are some built-in
+extensions, but custom JavaScript files can also be uploaded.
+
+Only AmpModders can upload projects with custom extensions, or any of the following built-in extensions:
+* Files
+* Fetch
+* HTTP
+* CloudLink
+* Local Storage
+* Iframe
+
+All projects with custom extensions will be reviewed and tagged. In addition, the project will show
+a warning before it loads. To load each extension, the user must click "Allow".
+
+There are technical restrictions in place to prevent New AmpModders from uploading projects with
+custom extensions. If you are a New AmpModder, wait until you can rank up to an AmpModder. See the
+AmpMod Wiki for more information. <!-- Wiki article name is currently: "ampmod-web:AmpModders" -->
+
+Extensions that can grab IP addresses and other sensitive info directly for malicious purposes like
+doxing are not allowed.
+
+### Iframes
+You can use iframes in your projects, but projects just about displaying websites are not allowed.
+This includes "browser" projects. Projects that show websites against the guidelines are also not
+allowed.
+
+## Reuploads of Scratch projects
+Unless a modification is made, reuploads of Scratch projects are only allowed if:
+* You own the project; or
+* The owner of the project has gave you permission to reupload it (provide proof in the notes and credits)
+
+Unchanged reuploads are not licenced under version 4.0 of the Creative Commons Attribution-ShareAlike licence,
+but instead under version 2.0 of the same licence, in accordance with the Scratch Terms of Use. To ensure the
+licencing of the project is clear, you must include the original project link in the project notes and credits.
+
+However, if the project has been modified in any way, it is licenced under version 4.0 of the
+Creative Commons Attribution-ShareAlike licence. This means that modified versions of Scratch projects
+uploaded to AmpMod cannot be reuploaded to Scratch as you would be downgrading the version of the licence.
+If you own the project, you can relicence your project under version 2.0 on AmpMod if you want to reupload it to Scratch.
+
+## Restricting access to parts of AmpMod
+Projects that restrict access to parts of AmpMod, such as the editor, are not allowed.
+This includes:
+* Using a social interaction (e.g. following, loving, commenting) to unlock parts of the project
+* Preventing users from remixing the project or seeing the project source code
+* "Banning" or limiting specific users from accessing the project
+* Restricting access to the project based on age, location, or other personal information
+* Requiring users to sign up for an external service (excluding Scratch, AmpMod Wiki, or AmpMod forums) to access the project
+* Requiring users to be a moderator or operator of AmpMod to access the project, or preventing moderators or operators from accessing the project
+* Preventing users from reporting the project
+
+The following are allowed:
+* Requiring users to have the AmpModder rank to access the project
+* Requiring users to have an AmpMod account to access the project
+* 
+
+## Cloud variable chatrooms
+Projects that focus on chatting with other users are not allowed, as we cannot safely moderate these.
+However, projects with cloud chat that don't revolve around it *are* allowed, but only if users can only
+send select pre-defined messages that they cannot create themselves.
+Examples of allowed projects:
+* A game where users can accuse others of doing something (e.g.  Among Us)
+* A game where users can send pre-defined messages to each other (e.g. "Hello", "Good game", "Watch out!")
+* A game where users can vote for something (e.g. "Yes", "No", "Maybe")
+
+Examples of disallowed projects:
+* A chatroom where users can send any non-pre-defined message they want
+* A chatroom where users can send any message to a single person or a group of people, whether pre-defined or not
+
+## Complaints about Scratch
+Projects that complain about Scratch, its policies, or its staff are not allowed. This includes
+projects that promote the idea that Scratch is a bad platform or that it is not safe for children.
+
+## Trademarks
+Usage of trademarks is not recommended without permission from the trademark holder. This includes Scratch
+mascots such as Scratch Cat, Gobo, Giga, Nano, Tera, and Pico.
+
+## Copyright
+We respect the intellectual property rights of others. If you believe that your copyright has been infringed,
+please contact us at [COPYRIGHT EMAIL ADDRESS] with the following information:
+* A description of the copyrighted work that you claim has been infringed
+* A description of where the material that you claim is infringing is located on the AmpMod website
+* Any other information that you believe is relevant to your claim
+
+If a copyright notice is received by AmpMod, we will remove the content in question and notify the user who uploaded it.
+If you infringe on copyright three times within 90 days, you will be banned permanently.
+
+### Creative Commons licences
+
+Content under the CC-BY-ND, CC-BY-NC, CC-BY-NC-SA, and CC-BY-NC-ND licences is banned for being incompatible with the
+CC-BY-SA 4.0 licence that AmpMod uses. If identified, your project will be removed. Continued violations
+may result in your ability to upload projects being limited.
+
+We recommend finding an alternative asset under a compatible licence:
+* [CC-BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) (attribution required, licence under same or compatible licence)
+* [CC-BY 4.0](https://creativecommons.org/licenses/by/4.0/) (attribution required)
+* [CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/) (public domain)
+* Content whose copyright has expired (public domain)
+
+You can find assets under these licences on [the Creative Commons search page](https://search.creativecommons.org/).
