@@ -31,7 +31,7 @@ jobs:
  
       - name: Lint and format
         run: |
-          prettier --write . && eslint .
+          npx lint-staged 
 
       - name: Push changes to Codeberg
         env:
