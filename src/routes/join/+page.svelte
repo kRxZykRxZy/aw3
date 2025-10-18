@@ -5,6 +5,8 @@
 	import { Cat, Check, X } from '@lucide/svelte';
 	import { SiScratch, SiCodeberg, SiGithub, SiMiraheze } from '@icons-pack/svelte-simple-icons';
 	import { MessageSquareText } from '@lucide/svelte';
+	import { onMount } from 'svelte';
+
 
 	// Form input variables
 	let username: string = '';
@@ -213,6 +215,7 @@
 		const data = await res.json();
 		// Actual join logic would go here, e.g., sending data to a server
 		showMessageBox(data.message || data.error);
+		await new Promise(resolve => setTimeout(resolve, 2000)); 
 		window.location.href = '/';
 		// In a real app, you'd redirect or log the user in here
 	}
@@ -253,6 +256,15 @@
 		showMessageBox(`Joining with ${serviceName} (mock action).`);
 		window.location.href = redirectUrl; // Redirect for demonstration
 	}
+
+	onMount(() => {
+        const Token  = new URLSearchParams(window.location.search)?.get('privateCode');
+		if(Token) {
+			const user = checkScratchLogin(Token);
+		} else {
+			console.log('Not Using ScratchAuth');
+		}
+	})
 </script>
 
 <svelte:head>

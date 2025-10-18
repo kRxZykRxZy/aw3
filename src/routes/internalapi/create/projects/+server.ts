@@ -24,6 +24,7 @@ export const POST: RequestHandler = async ({ url, request, cookies }) => {
 			public: true,
 			comments_allowed: true,
 			is_published: true,
+			username: user.username, 
 			author: {
 				id: user.user_id,
 				username: user.username,
