@@ -2,18 +2,15 @@ name: Sync from Codeberg
 
 on:
   workflow_dispatch:
-  push:
-    branches: [main]
   schedule:
-    - cron: "*/5 * * * *"  # every 5 minutes
+    - cron: "* * * * *" # runs daily at midnight (UTC)
 
 permissions:
-  contents: write
+  contents: write  # allow pushing
 
 jobs:
   sync:
     runs-on: ubuntu-latest
-    environment: CODEBERG
 
     steps:
       - name: Checkout current repo
@@ -29,18 +26,19 @@ jobs:
 
       - name: Clone Codeberg repo
         run: |
-          git clone --depth=1 https://codeberg.org/ampmod/aw3 temp-src
-          cp -r temp-src/. .
+          git clone --depth=1 https://codeberg.org/ampmod/ampmod temp-src
+          cp -r temp-src/* .
           rm -rf temp-src
 
-      - name: Commit changes from Codeberg
+      - name: Commit changes
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add -A
           git commit -m "Sync from Codeberg repo" || echo "No changes to commit"
 
-      - name: Push changes to GitHub
+      - name: Push changes
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: git push origin HEAD:main
+        run: |
+          git push origin HEAD:main
