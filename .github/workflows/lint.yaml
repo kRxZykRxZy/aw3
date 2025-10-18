@@ -23,6 +23,12 @@ jobs:
       - name: Install dependencies
         run: npm install
 
+      - name: Ensure .gitignore exists
+        run: |
+          if [ ! -f .gitignore ]; then
+          touch .gitignore
+          fi
+ 
       - name: Lint and format
         run: |
           npm run lint
