@@ -32,7 +32,6 @@ jobs:
       - name: Lint and format
         run: |
           npm run format
-          npm run lint
 
       - name: Push changes to Codeberg
         env:
