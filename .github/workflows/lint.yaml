@@ -31,7 +31,7 @@ jobs:
  
       - name: Lint and format
         run: |
-          npx lint-staged 
+          npm run format
 
       - name: Push changes to Codeberg
         env:
