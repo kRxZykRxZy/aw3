@@ -18,4 +18,4 @@ RUN npm install -g concurrently
 EXPOSE 5173
 
 # Start both the DB and the dev server concurrently
-CMD ["concurrently", "\"npm run db:start\"", "\"npm run dev\""]
+CMD ["concurrently", "\"npm run db:start\"", "\"npm run dev -- --host 0.0.0.0\""]
