@@ -1,0 +1,58 @@
+@import "../../css/colors.css";
+@import "../../css/units.css";
+
+.examples-row {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.example {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid $ui-black-transparent;
+    border-radius: $space;
+    overflow: hidden;
+    cursor: pointer;
+    width: 250px;
+    user-select: none;
+}
+
+.example-content {
+    display: flex;
+    flex-direction: column;
+    padding: calc($space * 1.2);
+    gap: 4px;
+}
+
+.example-title {
+    font-weight: bold;
+    font-size: 1.1em;
+}
+
+.example-author {
+    font-size: 0.8em;
+}
+
+.example:hover {
+    border: 1px solid $looks-secondary;
+}
+
+.example .example-thumbnail {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+}
+
+.modalContent {
+    max-width: 600px;
+}
+
+.modal-body {
+    background: $ui-modal-background;
+    color: $page-foreground;
+    padding: 20px;
+    display: flex;
+    gap: $space;
+    flex-direction: column;
+    align-items: flex-start;
+}
