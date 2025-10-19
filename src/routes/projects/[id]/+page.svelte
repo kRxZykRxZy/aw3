@@ -96,6 +96,7 @@
       {/await}
     </div>
   </aside>
+  {/if}
 </section>
 <h3>Comments: ({data.commentCount})</h3>
 <comments>
