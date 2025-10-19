@@ -16,7 +16,7 @@
 				>
 			</div>
 			<a
-				href="#"
+				href="/"
 				class="ml-1 cursor-pointer rounded-md bg-accent px-3 py-1.5 text-sm text-white no-underline transition-colors hover:bg-accent-secondary"
 				>Link</a
 			>
@@ -26,7 +26,7 @@
 		>
 			<span class="font-bold text-gray-800 dark:text-gray-200">Codeberg</span>
 			<a
-				href="#"
+				href="/"
 				class="cursor-pointer rounded-md bg-accent px-3 py-1.5 text-sm text-white no-underline transition-colors hover:bg-accent-secondary"
 				>Link</a
 			>
@@ -36,7 +36,7 @@
 		>
 			<span class="font-bold text-gray-800 dark:text-gray-200">GitHub</span>
 			<a
-				href="#"
+				href="/"
 				class="cursor-pointer rounded-md bg-accent px-3 py-1.5 text-sm text-white no-underline transition-colors hover:bg-accent-secondary"
 				>Link</a
 			>
@@ -46,7 +46,7 @@
 		>
 			<span class="font-bold text-gray-800 dark:text-gray-200">AmpMod Wiki</span>
 			<a
-				href="#"
+				href="/"
 				class="cursor-pointer rounded-md bg-accent px-3 py-1.5 text-sm text-white no-underline transition-colors hover:bg-accent-secondary"
 				>Link</a
 			>
@@ -56,7 +56,7 @@
 		>
 			<span class="font-bold text-gray-800 dark:text-gray-200">AmpMod Forums</span>
 			<a
-				href="#"
+				href="/"
 				class="cursor-pointer rounded-md bg-accent px-3 py-1.5 text-sm text-white no-underline transition-colors hover:bg-accent-secondary"
 				>Link</a
 			>
