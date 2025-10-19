@@ -69,10 +69,9 @@
 </style>
 
 <section>
-  {#if data.rating === "13+"}
+  {#if !data}
     <div class="project">
-      <h3>This project is rated 13+</h3>
-      <p>Please log in or sign up to view this project.</p>
+      <h3>This project doesn't excist</h3>
     </div>
   {:else}
     <iframe title={data.title} src="https://ampmod.codeberg.page/embed#{data.id}" width="482" height="412" allowtransparency={true} frameborder="0" scrolling="no" allowfullscreen style="color-scheme: light;"></iframe>
