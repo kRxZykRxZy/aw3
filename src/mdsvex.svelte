@@ -1,6 +1,7 @@
 <script lang="ts">
 	let { children, title, subtitle } = $props();
 	import Banner from '$components/banner/Banner.svelte';
+	import "../app.css";
 </script>
 
 <Banner text={title} subtext={subtitle} />
