@@ -1,5 +1,4 @@
 import { writable } from 'svelte/store';
-import { onMount } from 'svelte';
 
 export const isLoggedIn = writable(false);
 export const isBanned = writable(false);
@@ -7,29 +6,30 @@ export const sessionToken = writable('');
 export const username = writable('');
 export const userData = writable(false);
 
-async function getSession() {
+export async function loadSession() {
 	const res = await fetch('/internalapi/session', {
 		credentials: 'include'
 	});
-	if (!res.ok) return null;
-	try {
-		return await res.json();
-	} catch {
-		return null;
-	}
-}
+	if (!res.ok) return;
 
-onMount(async () => {
-	const data = await getSession();
+	let data = null;
+	try {
+		data = await res.json();
+	} catch {
+		data = null;
+	}
+
 	if (data) {
 		userData.set(data);
 		username.set(data.username);
-		isLoggedIn.set(data ? true : false);
-		isBanned.set(data.isBanned ? true : false);
+		isLoggedIn.set(true);
+		isBanned.set(data.isBanned || false);
 	} else {
 		userData.set(null);
 		username.set(null);
 		isLoggedIn.set(false);
 		isBanned.set(false);
 	}
-});
+}
+
+loadSession();
