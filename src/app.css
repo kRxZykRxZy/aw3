@@ -3,9 +3,6 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Tailwind typography plugin */
-@import '@tailwindcss/typography';
-
 /* Custom theme variables */
 @layer theme {
   :root {
