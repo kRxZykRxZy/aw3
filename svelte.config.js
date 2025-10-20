@@ -8,14 +8,10 @@ const config = {
 	preprocess: [vitePreprocess(), mdsvex()],
 	kit: {
 		adapter: adapter(),
-		vite: {
-			resolve: {
-				alias: {
-					$lib: path.resolve('./src/lib'),
-					$components: path.resolve('./src/lib/components'),
-					$stores: path.resolve('./src/stores')
-				}
-			}
+		alias: {
+			$lib: path.resolve('./src/lib'),
+			$components: path.resolve('./src/lib/components'),
+			$stores: path.resolve('./src/stores')
 		}
 	},
 	extensions: ['.svelte', '.svx']
