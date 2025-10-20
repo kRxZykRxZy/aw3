@@ -2,7 +2,6 @@ import type { RequestHandler } from '@sveltejs/kit';
 import { db } from '$lib/server/db';
 import * as table from '$lib/server/db/schema';
 import { validateSessionToken, sessionCookieName } from '$lib/server/auth';
-import { encodeBase64 } from '@oslojs/encoding';
 
 export const POST: RequestHandler = async ({ url, request, cookies }) => {
 	try {
@@ -12,24 +11,27 @@ export const POST: RequestHandler = async ({ url, request, cookies }) => {
 		const { user } = await validateSessionToken(token);
 		if (!user) return new Response(JSON.stringify({ error: 'Unauthorized' }), { status: 401 });
 
-		const sb3 = request.json();
+		const sb3 = await request.json();
 		const now = new Date().toISOString();
-		const title = url.searchParams.get('title');
+		const title = url.searchParams.get('title') ?? 'Untitled Project';
+
+		const joined = typeof user.joined === 'string' ? user.joined : user.joined.toISOString();
+
 		const projectMeta = {
 			id: Math.floor(Math.random() * 1e9),
-			title: title,
+			title,
 			description: '',
 			instructions: '',
 			visibility: 'visible',
 			public: true,
 			comments_allowed: true,
 			is_published: true,
-			username: user.username, 
+			username: user.username,
 			author: {
-				id: user.user_id,
+				id: user.id,
 				username: user.username,
 				ampteam: false,
-				history: { joined: user.joined.toISOString() },
+				history: { joined },
 				profile: {
 					id: null,
 					images: { '90x90': '', '60x60': '', '55x55': '', '50x50': '', '32x32': '' }
@@ -42,7 +44,9 @@ export const POST: RequestHandler = async ({ url, request, cookies }) => {
 			remix: { parent: null, root: null },
 			project_token: crypto.randomUUID()
 		};
+
 		const projectId = crypto.randomUUID();
+
 		await db.insert(table.project).values({
 			id: projectId,
 			title: projectMeta.title,
@@ -50,8 +54,8 @@ export const POST: RequestHandler = async ({ url, request, cookies }) => {
 			notes: projectMeta.description,
 			creator: user.username,
 			ghost: false,
-			projectJson: sb3,
-			projectMeta
+			projectJson: JSON.stringify(sb3),
+			projectMeta: JSON.stringify(projectMeta)
 		});
 
 		return new Response(

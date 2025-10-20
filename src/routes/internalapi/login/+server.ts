@@ -1,6 +1,6 @@
 import type { RequestHandler } from '@sveltejs/kit';
 import { db } from '$lib/server/db';
-import { user } from '$lib/server/db/schema'; // use ampmodder table
+import { user } from '$lib/server/db/schema';
 import { generateSessionToken, createSession, setSessionTokenCookie } from '$lib/server/auth';
 import bcrypt from 'bcryptjs';
 import { eq } from 'drizzle-orm';
@@ -14,24 +14,17 @@ export const POST: RequestHandler = async (event) => {
 	}
 
 	try {
-		// Fetch user using Drizzle ORM
-		const data = await db
-			.select()
-			.from(user)
-			.where(eq(user.username, username))
-			.limit(1)
-			.then((rows) => rows[0]);
+		const data = await db.select().from(user).where(eq(user.username, username)).get();
 
-		if (!data || !(await bcrypt.compare(password, data.password_hash))) {
+		if (!data || !(await bcrypt.compare(password, data.passwordHash))) {
 			return new Response(JSON.stringify({ error: 'Invalid credentials' }), { status: 401 });
 		}
 
-		// Generate session token and set cookie
-		const newExpiry = new Date(Date.now() + 7 * 24 * 60 * 60 * 1000); // 7 days
+		const newExpiry = new Date(Date.now() + 7 * 24 * 60 * 60 * 1000);
 		const ssid = generateSessionToken();
 
-		await createSession(ssid, data.user_id); // create session in DB
-		setSessionTokenCookie(event, ssid, newExpiry); // set cookie in response
+		await createSession(ssid, data.id);
+		setSessionTokenCookie(event, ssid, newExpiry);
 
 		return new Response(
 			JSON.stringify({

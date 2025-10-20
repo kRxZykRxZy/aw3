@@ -1,56 +1,49 @@
-import {
-	pgTable,
-	integer,
-	text,
-	timestamp,
-	boolean,
-	varchar,
-	smallint,
-	json,
-	serial
-} from 'drizzle-orm/pg-core';
+import { sqliteTable, integer, text, integer as booleanInt } from 'drizzle-orm/sqlite-core';
 
-export const user = pgTable('ampmodder', {
+export const user = sqliteTable('ampmodder', {
 	id: text('user_id').primaryKey(),
-	username: varchar('username', { length: 20 }).notNull().unique(),
-	joined: timestamp('joined', { mode: 'date' }).defaultNow().notNull(),
-	rank: smallint('rank').default(0), // 0 = New AmpModder
+	username: text('username').notNull(),
+	joined: text('joined')
+		.default(sqliteTable.sql`CURRENT_TIMESTAMP`)
+		.notNull(),
+	rank: integer('rank').default(0),
 	bio: text('bio'),
 	status: text('status'),
 	passwordHash: text('password_hash').notNull(),
-	banned: boolean('banned').default(false),
+	banned: booleanInt('banned').default(0),
 	bannedType: text('bannedType').default('temporary'),
-	bannedReason: text('bannedReason').default('You have been banned for breaking the guidelines.'), // Mods should change this
-	bannedExpiry: timestamp('bannedExpiry', { mode: 'date' }).defaultNow().notNull(),
-	ghost: boolean('ghost').default(false), // ghost = whether account profile is accessible
-	userMETA: json('userMETA')
+	bannedReason: text('bannedReason').default('You have been banned for breaking the guidelines.'),
+	bannedExpiry: text('bannedExpiry')
+		.default(sqliteTable.sql`CURRENT_TIMESTAMP`)
+		.notNull(),
+	ghost: booleanInt('ghost').default(0),
+	userMETA: text('userMETA')
 });
 
-export const project = pgTable('project', {
-	// TODO: add remixing
+export const project = sqliteTable('project', {
 	id: text('id').primaryKey(),
-	title: varchar('title', { length: 500 }),
-	created: timestamp('created', { mode: 'date' }).defaultNow().notNull(),
+	title: text('title'),
+	created: text('created')
+		.default(sqliteTable.sql`CURRENT_TIMESTAMP`)
+		.notNull(),
 	instructions: text('instructions'),
 	notes: text('notes'),
 	creator: text('creator')
 		.notNull()
 		.references(() => user.id),
-	ghost: boolean('ghost').default(true),
-	projectJson: json('projectJson'),
-	projectMeta: json('projectMeta')
+	ghost: booleanInt('ghost').default(1),
+	projectJson: text('projectJson'),
+	projectMeta: text('projectMeta')
 });
 
-export const session = pgTable('session', {
+export const session = sqliteTable('session', {
 	id: text('id').primaryKey(),
 	userId: text('user_id')
 		.notNull()
 		.references(() => user.id),
-	expiresAt: timestamp('expires_at', { withTimezone: true, mode: 'date' }).notNull()
+	expiresAt: text('expires_at').notNull()
 });
 
 export type Session = typeof session.$inferSelect;
-
 export type User = typeof user.$inferSelect;
-
 export type Project = typeof project.$inferSelect;

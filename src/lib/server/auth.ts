@@ -13,12 +13,12 @@ export function generateSessionToken() {
 	return encodeBase64url(bytes);
 }
 
-export async function createSession(token: string, userId: number) {
+export async function createSession(token: string, userId: string) {
 	const sessionId = encodeHexLowerCase(sha256(new TextEncoder().encode(token)));
 	const session: table.Session = {
 		id: sessionId,
 		userId,
-		expiresAt: new Date(Date.now() + DAY_IN_MS * 30)
+		expiresAt: new Date(Date.now() + DAY_IN_MS * 30).toISOString()
 	};
 	await db.insert(table.session).values(session);
 	return session;
@@ -44,14 +44,15 @@ export async function validateSessionToken(token: string) {
 
 	const { session, user } = result;
 	const now = Date.now();
+	const expiresAt = new Date(session.expiresAt).getTime();
 
-	if (now >= session.expiresAt.getTime()) {
+	if (now >= expiresAt) {
 		await db.delete(table.session).where(eq(table.session.id, session.id));
 		return { session: null, user: null };
 	}
 
-	if (now >= session.expiresAt.getTime() - DAY_IN_MS * 15) {
-		session.expiresAt = new Date(now + DAY_IN_MS * 30);
+	if (now >= expiresAt - DAY_IN_MS * 15) {
+		session.expiresAt = new Date(now + DAY_IN_MS * 30).toISOString();
 		await db
 			.update(table.session)
 			.set({ expiresAt: session.expiresAt })
