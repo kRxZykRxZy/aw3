@@ -1,72 +1,87 @@
 import type { RequestHandler } from '@sveltejs/kit';
 import { prisma } from '$lib/server/db';
 import { validateSessionToken, sessionCookieName } from '$lib/server/auth';
+import fs from 'fs/promises';
+import path from 'path';
+import AdmZip from 'adm-zip';
+import { v4 as uuidv4 } from 'uuid';
 
-export const POST: RequestHandler = async ({ url, request, cookies }) => {
-	try {
-		const token = cookies.get(sessionCookieName);
-		if (!token) return new Response(JSON.stringify({ error: 'Unauthorized' }), { status: 401 });
+const ROOT_DIR = path.resolve('prisma/internal');
+const FILES_DIR = path.join(ROOT_DIR, 'files');
+const ASSETS_DIR = path.join(ROOT_DIR, 'assets');
+const PROJECTS_DIR = path.join(ROOT_DIR, 'projects');
 
-		const { user } = await validateSessionToken(token);
-		if (!user) return new Response(JSON.stringify({ error: 'Unauthorized' }), { status: 401 });
+async function ensureDir(dir: string) {
+    await fs.mkdir(dir, { recursive: true });
+}
 
-		const sb3 = await request.json();
-		const now = new Date().toISOString();
-		const title = url.searchParams.get('title') ?? 'Untitled Project';
-		const joined = typeof user.joined === 'string' ? user.joined : user.joined.toISOString();
+export const POST: RequestHandler = async ({ request, cookies }) => {
+    try {
+        const token = cookies.get(sessionCookieName);
+        if (!token) return new Response(JSON.stringify({ error: 'Unauthorized' }), { status: 401 });
 
-		const projectMeta = {
-			id: Math.floor(Math.random() * 1e9),
-			title,
-			description: '',
-			instructions: '',
-			visibility: 'visible',
-			public: true,
-			comments_allowed: true,
-			is_published: true,
-			username: user.username,
-			author: {
-				id: user.id,
-				username: user.username,
-				ampteam: false,
-				history: { joined },
-				profile: {
-					id: null,
-					images: { '90x90': '', '60x60': '', '55x55': '', '50x50': '', '32x32': '' }
-				}
-			},
-			image: '',
-			images: {},
-			history: { created: now, modified: now, shared: now },
-			stats: { views: 0, loves: 0, favorites: 0, remixes: 0 },
-			remix: { parent: null, root: null },
-			project_token: crypto.randomUUID()
-		};
+        const { user } = await validateSessionToken(token);
+        if (!user) return new Response(JSON.stringify({ error: 'Unauthorized' }), { status: 401 });
 
-		const projectId = crypto.randomUUID();
+        // Ensure directories exist
+        await ensureDir(FILES_DIR);
+        await ensureDir(ASSETS_DIR);
+        await ensureDir(PROJECTS_DIR);
 
-		await prisma.project.create({
-			data: {
-				id: projectId,
-				title: projectMeta.title,
-				instructions: projectMeta.instructions,
-				notes: projectMeta.description,
-				creatorId: user.id, // Use user ID for relation
-				ghost: false,
-				projectJson: JSON.stringify(sb3),
-				projectMeta: JSON.stringify(projectMeta)
-			}
-		});
+        const formData = await request.formData();
+        const files = formData.getAll('files') as File[];
+        if (!files.length) return new Response(JSON.stringify({ error: 'No files uploaded' }), { status: 400 });
 
-		return new Response(
-			JSON.stringify({
-				message: 'Project uploaded',
-				project: { id: projectId, title: projectMeta.title }
-			}),
-			{ status: 201 }
-		);
-	} catch (e) {
-		console.error(e);
-		return new Response(JSON.stringify({ error: 'Server error' }), { status: 500 });
-	}
+        for (const file of files) {
+            if (!file.name.endsWith('.apz')) continue;
+
+            // Read file into buffer
+            const arrayBuffer = await file.arrayBuffer();
+            const buffer = Buffer.from(arrayBuffer);
+
+            const zip = new AdmZip(buffer);
+            const zipEntries = zip.getEntries();
+
+            // Remove project.json
+            const projectJsonEntry = zipEntries.find(e => e.entryName === 'project.json');
+            if (!projectJsonEntry) return new Response(JSON.stringify({ error: 'project.json not found' }), { status: 400 });
+
+            zip.deleteFile('project.json');
+
+            // Determine new project ID
+            const projectCount = await prisma.project.count();
+            const projectId = (projectCount + 1).toString();
+
+            // Rename project.json to ID.json
+            const projectJson = projectJsonEntry.getData().toString('utf-8');
+            const projectJsonPath = path.join(PROJECTS_DIR, `${projectId}.json`);
+            await fs.writeFile(projectJsonPath, projectJson, 'utf-8');
+
+            // Save remaining files to assets
+            for (const entry of zip.getEntries()) {
+                if (!entry.isDirectory) {
+                    const filePath = path.join(ASSETS_DIR, entry.entryName);
+                    await ensureDir(path.dirname(filePath));
+                    await fs.writeFile(filePath, entry.getData());
+                }
+            }
+
+            // Create project record in DB
+            await prisma.project.create({
+                data: {
+                    id: projectId,
+                    title: path.basename(file.name, '.apz'),
+                    creatorId: user.id,
+                    ghost: false,
+                    projectJson: projectJson,
+                    projectMeta: JSON.stringify({ id: projectId })
+                }
+            });
+        }
+
+        return new Response(JSON.stringify({ message: 'Project(s) uploaded successfully' }), { status: 201 });
+    } catch (err) {
+        console.error(err);
+        return new Response(JSON.stringify({ error: 'Server error' }), { status: 500 });
+    }
 };
