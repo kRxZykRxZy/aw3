@@ -1,28 +1,30 @@
 import type { RequestHandler } from '@sveltejs/kit';
-import { db } from '$lib/server/db';
-import { user } from '$lib/server/db/schema';
+import { prisma } from '$lib/server/db';
 import bcrypt from 'bcryptjs';
-import { eq, count } from 'drizzle-orm';
 import { v4 as uuid } from 'uuid';
 
 export const POST: RequestHandler = async ({ request }) => {
 	try {
 		const { username, password, bio, country } = await request.json();
-		if (!username || !password)
+		if (!username || !password) {
 			return new Response(JSON.stringify({ error: 'Missing credentials' }), { status: 400 });
+		}
 
-		const existingUser = await db.select().from(user).where(eq(user.username, username)).get();
-		if (existingUser)
+		// Check if username exists
+		const existingUser = await prisma.user.findUnique({ where: { username } });
+		if (existingUser) {
 			return new Response(JSON.stringify({ error: 'Username taken' }), { status: 409 });
+		}
 
-		const user_id = uuid(); // generate unique ID
-		const joined = new Date().toISOString();
+		// Generate new user
+		const user_id = uuid();
+		const joined = new Date();
 		const passwordHash = await bcrypt.hash(password, 10);
 		const userMETA = JSON.stringify({
 			id: user_id,
 			username,
 			scratchteam: false,
-			history: { joined },
+			history: { joined: joined.toISOString() },
 			profile: {
 				id: null,
 				images: { '90x90': '', '60x60': '', '55x55': '', '50x50': '', '32x32': '' },
@@ -32,15 +34,18 @@ export const POST: RequestHandler = async ({ request }) => {
 			}
 		});
 
-		await db.insert(user).values({
-			id: user_id,
-			username,
-			passwordHash,
-			bio: bio || null,
-			joined,
-			rank: 0,
-			ghost: false,
-			userMETA
+		// Create user in DB
+		await prisma.user.create({
+			data: {
+				id: user_id,
+				username,
+				passwordHash,
+				bio: bio || null,
+				joined,
+				rank: 0,
+				ghost: false,
+				userMETA
+			}
 		});
 
 		return new Response(

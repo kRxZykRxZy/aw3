@@ -1,9 +1,3 @@
-import { drizzle } from 'drizzle-orm/sqlite';
-import Database from 'better-sqlite3';
-import * as schema from './schema';
-import path from 'path';
+import { PrismaClient } from '@prisma/client';
 
-const dbFile = path.join(process.cwd(), 'internal', 'db', 'files.db');
-const client = new Database(dbFile);
-
-export const db = drizzle(client, { schema });
+export const prisma = new PrismaClient();

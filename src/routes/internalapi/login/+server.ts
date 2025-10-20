@@ -1,12 +1,10 @@
 import type { RequestHandler } from '@sveltejs/kit';
-import { db } from '$lib/server/db';
-import { user } from '$lib/server/db/schema';
+import { prisma } from '$lib/server/db';
 import { generateSessionToken, createSession, setSessionTokenCookie } from '$lib/server/auth';
 import bcrypt from 'bcryptjs';
-import { eq } from 'drizzle-orm';
 
 export const POST: RequestHandler = async (event) => {
-	const { request } = event;
+	const { request, cookies } = event;
 	const { username, password } = await request.json();
 
 	if (!username || !password) {
@@ -14,7 +12,8 @@ export const POST: RequestHandler = async (event) => {
 	}
 
 	try {
-		const data = await db.select().from(user).where(eq(user.username, username)).get();
+		// Fetch user by username
+		const data = await prisma.user.findUnique({ where: { username } });
 
 		if (!data || !(await bcrypt.compare(password, data.passwordHash))) {
 			return new Response(JSON.stringify({ error: 'Invalid credentials' }), { status: 401 });

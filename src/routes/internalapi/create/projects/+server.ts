@@ -1,6 +1,5 @@
 import type { RequestHandler } from '@sveltejs/kit';
-import { db } from '$lib/server/db';
-import * as table from '$lib/server/db/schema';
+import { prisma } from '$lib/server/db';
 import { validateSessionToken, sessionCookieName } from '$lib/server/auth';
 
 export const POST: RequestHandler = async ({ url, request, cookies }) => {
@@ -14,7 +13,6 @@ export const POST: RequestHandler = async ({ url, request, cookies }) => {
 		const sb3 = await request.json();
 		const now = new Date().toISOString();
 		const title = url.searchParams.get('title') ?? 'Untitled Project';
-
 		const joined = typeof user.joined === 'string' ? user.joined : user.joined.toISOString();
 
 		const projectMeta = {
@@ -47,15 +45,17 @@ export const POST: RequestHandler = async ({ url, request, cookies }) => {
 
 		const projectId = crypto.randomUUID();
 
-		await db.insert(table.project).values({
-			id: projectId,
-			title: projectMeta.title,
-			instructions: projectMeta.instructions,
-			notes: projectMeta.description,
-			creator: user.username,
-			ghost: false,
-			projectJson: JSON.stringify(sb3),
-			projectMeta: JSON.stringify(projectMeta)
+		await prisma.project.create({
+			data: {
+				id: projectId,
+				title: projectMeta.title,
+				instructions: projectMeta.instructions,
+				notes: projectMeta.description,
+				creatorId: user.id, // Use user ID for relation
+				ghost: false,
+				projectJson: JSON.stringify(sb3),
+				projectMeta: JSON.stringify(projectMeta)
+			}
 		});
 
 		return new Response(

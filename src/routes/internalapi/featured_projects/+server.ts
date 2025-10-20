@@ -1,29 +1,30 @@
 import type { RequestHandler } from '@sveltejs/kit';
-import { db } from '$lib/server/db';
-import * as t from '$lib/server/db/schema';
+import { prisma } from '$lib/server/db';
 
 export const GET: RequestHandler = async () => {
 	try {
-		const projects = await db
-			.select({
-				id: t.project.id,
-				title: t.project.title,
-				creator: t.project.creator,
-				meta: t.project.projectMeta
-			})
-			.from(t.project);
+		// Fetch all projects with selected fields
+		const projects = await prisma.project.findMany({
+			select: {
+				id: true,
+				title: true,
+				creator: true,
+				projectMeta: true
+			}
+		});
 
+		// Transform projects: parse metadata, compute score, determine thumbnail
 		const transformedProjects = projects.map((project) => {
 			let metadata: any = {};
 			try {
-				metadata = project.meta ? JSON.parse(project.meta) : {};
+				metadata = project.projectMeta ? JSON.parse(project.projectMeta) : {};
 			} catch {
 				metadata = {};
 			}
 
 			const stats = metadata.stats || {};
 
-			const transformedProject = {
+			return {
 				id: project.id,
 				title: project.title || 'Untitled Project',
 				author: project.creator || metadata.author?.username || 'Unknown',
@@ -33,14 +34,15 @@ export const GET: RequestHandler = async () => {
 					'https://cdn2.scratch.mit.edu/get_image/project/1_270x210.png',
 				score: (stats.views ?? 0) + (stats.loves ?? 0) + (stats.favorites ?? 0)
 			};
-
-			return transformedProject;
 		});
 
+		// Sort by score descending
 		const sortedProjects = transformedProjects.sort((a, b) => b.score - a.score);
 
+		// Take top 10
 		const topProjects = sortedProjects.slice(0, 10);
 
+		// Map to response format
 		const responseProjects = topProjects.map((project) => ({
 			id: project.id,
 			title: project.title,

@@ -1,15 +1,15 @@
-import { db } from '$lib/server/db';
-import * as table from '$lib/server/db/schema';
-import { eq } from 'drizzle-orm';
+import { prisma } from '$lib/server/db';
 
 export const GET = async ({ params }) => {
-	const project = await db
-		.select()
-		.from(table.project)
-		.where(eq(table.project.id, params.id))
-		.get();
+	const project = await prisma.project.findUnique({
+		where: { id: params.id }
+	});
 
-	return project
-		? Response.json(project.projectJson ? JSON.parse(project.projectJson) : {})
-		: Response.json({ error: 'Project not found' }, { status: 404 });
+	if (!project) {
+		return new Response(JSON.stringify({ error: 'Project not found' }), { status: 404 });
+	}
+
+	return new Response(JSON.stringify(project.projectJson ? JSON.parse(project.projectJson) : {}), {
+		status: 200
+	});
 };

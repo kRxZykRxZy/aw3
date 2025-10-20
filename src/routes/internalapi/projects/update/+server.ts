@@ -1,8 +1,6 @@
 import type { RequestHandler } from '@sveltejs/kit';
-import { db } from '$lib/server/db';
-import * as table from '$lib/server/db/schema';
+import { prisma } from '$lib/server/db';
 import { validateSessionToken, sessionCookieName } from '$lib/server/auth';
-import { eq } from 'drizzle-orm';
 
 export const POST: RequestHandler = async ({ url, request, cookies }) => {
 	try {
@@ -17,32 +15,27 @@ export const POST: RequestHandler = async ({ url, request, cookies }) => {
 		const id = url.searchParams.get('pID');
 		if (!id) return new Response(JSON.stringify({ error: 'Project ID required' }), { status: 400 });
 
-		const existingProject = await db
-			.select()
-			.from(table.project)
-			.where(eq(table.project.id, id))
-			.get();
-
+		const existingProject = await prisma.project.findUnique({ where: { id } });
 		if (!existingProject)
 			return new Response(JSON.stringify({ error: 'Project not found' }), { status: 404 });
 
-		// Parse projectMeta from TEXT
 		const projectMeta = existingProject.projectMeta ? JSON.parse(existingProject.projectMeta) : {};
-
 		const updatedMeta = {
 			...projectMeta,
 			history: { ...(projectMeta.history || {}), modified: new Date().toISOString() }
 		};
 
-		await db
-			.update(table.project)
-			.set({ projectJson: JSON.stringify(projectJson), projectMeta: JSON.stringify(updatedMeta) })
-			.where(eq(table.project.id, existingProject.id));
+		await prisma.project.update({
+			where: { id },
+			data: {
+				projectJson: JSON.stringify(projectJson),
+				projectMeta: JSON.stringify(updatedMeta)
+			}
+		});
 
-		return new Response(
-			JSON.stringify({ message: 'Project updated', project: { id: existingProject.id, title } }),
-			{ status: 200 }
-		);
+		return new Response(JSON.stringify({ message: 'Project updated', project: { id, title } }), {
+			status: 200
+		});
 	} catch (e) {
 		console.error(e);
 		return new Response(JSON.stringify({ error: 'Server error' }), { status: 500 });
