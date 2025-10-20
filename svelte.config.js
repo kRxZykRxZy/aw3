@@ -17,10 +17,8 @@ const config = {
 
 	kit: {
 		// Use Node adapter
-		adapter: adapter({
-			out: 'build', // explicitly set output folder
-			precompress: false
-		}),
+		adapter: adapter(),
+		outDir: 'build',
 
 		// Optional: configure aliases
 		alias: {
