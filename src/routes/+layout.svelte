@@ -49,7 +49,7 @@
 	<main class="content-area">
 		<noscript>
 			<div
-				class="bg-red-500 p-3 text-center font-bold text-white"
+				class="bg-red-500 p-3 font-bold text-white text-center"
 				style="display: block; width: 100%; z-index: 1000;"
 			>
 				<p>Most functionality on this site requires JavaScript to work.</p>

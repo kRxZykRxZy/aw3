@@ -30,7 +30,7 @@
 
 <Banner text="Settings" subtext="Set preferences for this account." />
 
-<div class="mx-auto mt-10 max-w-[1200px] p-8">
+<div class="mt-10 p-8 mx-auto max-w-[1200px]">
 	{#if $isLoggedIn}
 		<LeftTabbed {tabs} />
 	{:else}

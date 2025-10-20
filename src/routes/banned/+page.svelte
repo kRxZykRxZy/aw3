@@ -107,10 +107,10 @@
 	<title>Banned - AmpMod</title>
 </svelte:head>
 
-<div class="mx-auto mt-16 max-w-2xl rounded-xl font-sans text-base">
+<div class="mt-16 max-w-2xl rounded-xl font-sans text-base mx-auto">
 	{#if fullyLoaded}
 		<h1 class="mb-6 text-3xl font-bold text-red-600">You have been banned from AmpMod.</h1>
-		<p class="dark:text-text-dark mb-2 italic text-gray-600">Reason: {getBanReasonDisplay()}</p>
+		<p class="dark:text-text-dark mb-2 text-gray-600 italic">Reason: {getBanReasonDisplay()}</p>
 		{#if banType}
 			<p class="dark:text-text-dark mb-4 italic">This ban is {getBanTypeDisplay()}.</p>
 		{/if}
@@ -135,9 +135,9 @@
 			{/if}
 
 			{#if showAppealForm}
-				<div class="mt-4 flex flex-col gap-2">
+				<div class="mt-4 gap-2 flex flex-col">
 					<p class="font-semibold">Keep in mind:</p>
-					<ul class="mb-2 list-disc pl-6 text-sm">
+					<ul class="mb-2 pl-6 text-sm list-disc">
 						<li>
 							Be respectful and honest in your appeal. Being disrespectful may cause your ban to be
 							unappealable.
@@ -161,9 +161,9 @@
 					<textarea
 						id="appeal-text"
 						bind:value={appealText}
-						class="mb-2 min-h-[100px] rounded-md border border-gray-300 p-3 text-base"
+						class="mb-2 rounded-md border-gray-300 p-3 text-base min-h-[100px] border"
 					></textarea>
-					<div class="flex gap-2">
+					<div class="gap-2 flex">
 						<button
 							on:click={submitAppeal}
 							disabled={isSubmitting}
@@ -177,12 +177,12 @@
 						</button>
 						<button
 							on:click={() => (showAppealForm = false)}
-							class="rounded-md bg-gray-300 px-4 py-2 text-gray-800 shadow transition hover:bg-gray-400"
+							class="rounded-md bg-gray-300 px-4 py-2 text-gray-800 shadow hover:bg-gray-400 transition"
 							>Cancel</button
 						>
 					</div>
 					{#if appealStatus}
-						<p class="mt-2 italic text-gray-500">{appealStatus}</p>
+						<p class="mt-2 text-gray-500 italic">{appealStatus}</p>
 					{/if}
 				</div>
 			{/if}

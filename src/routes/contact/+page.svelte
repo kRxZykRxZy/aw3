@@ -27,25 +27,25 @@
 
 <Banner text="Contact AmpMod" />
 
-<div class="max-w-1xl mx-auto px-6 py-16">
+<div class="max-w-1xl px-6 py-16 mx-auto">
 	<p class="mb-4 text-gray-700 dark:text-gray-300">
 		This form can be used to contact AmpElectrecuted.
 	</p>
 	<form name="contact" method="POST" data-netlify="true" onsubmit={handleSubmit}>
-		<label for="subject" class="mb-2 block text-gray-700 dark:text-gray-300">Subject:</label>
+		<label for="subject" class="mb-2 text-gray-700 dark:text-gray-300 block">Subject:</label>
 		<input
 			name="subject"
 			type="text"
 			id="subject"
-			class="mb-4 w-full rounded border border-gray-300 p-2 dark:border-gray-600"
+			class="mb-4 rounded border-gray-300 p-2 dark:border-gray-600 w-full border"
 			required
 		/>
-		<label for="email" class="mb-2 block text-gray-700 dark:text-gray-300">Your Email:</label>
+		<label for="email" class="mb-2 text-gray-700 dark:text-gray-300 block">Your Email:</label>
 		<input
 			name="email"
 			type="email"
 			id="email"
-			class="mb-4 w-full rounded border border-gray-300 p-2 dark:border-gray-600"
+			class="mb-4 rounded border-gray-300 p-2 dark:border-gray-600 w-full border"
 			required
 		/>
 		<div class="mb-4 text-sm text-gray-500">
@@ -58,12 +58,12 @@
 				AmpMod.
 			</p>
 		</div>
-		<label for="message" class="mb-2 block text-gray-700 dark:text-gray-300">Message:</label>
+		<label for="message" class="mb-2 text-gray-700 dark:text-gray-300 block">Message:</label>
 		<textarea
 			name="message"
 			id="message"
 			rows="6"
-			class="mb-4 w-full rounded border border-gray-300 p-2 dark:border-gray-600"
+			class="mb-4 rounded border-gray-300 p-2 dark:border-gray-600 w-full border"
 			required
 		></textarea>
 		<button

@@ -90,13 +90,13 @@
 </script>
 
 <header
-	class="bg-accent fixed left-0 top-0 z-10 flex h-[50px] w-full items-center justify-center border-b border-black/20 px-2 font-sans text-sm text-white shadow-md md:px-4"
+	class="bg-accent left-0 top-0 border-black/20 px-2 font-sans text-sm text-white shadow-md md:px-4 fixed z-10 flex h-[50px] w-full items-center justify-center border-b"
 >
-	<div class="flex w-full items-center justify-center gap-4">
+	<div class="gap-4 flex w-full items-center justify-center">
 		<!-- Hamburger for mobile -->
-		<div class="hamburger-container relative flex items-center md:hidden">
+		<div class="hamburger-container md:hidden relative flex items-center">
 			<button
-				class="flex min-h-[44px] min-w-[44px] items-center justify-center p-3 text-xl text-white focus:outline-none"
+				class="p-3 text-xl text-white flex min-h-[44px] min-w-[44px] items-center justify-center focus:outline-none"
 				on:click={toggleMenu}
 				aria-expanded={isMenuOpen}
 				aria-controls="main-menu"
@@ -106,41 +106,41 @@
 
 			{#if isMenuOpen}
 				<div
-					class="hamburger-menu bg-accent absolute left-0 top-full mt-2 w-48 max-w-[90vw] rounded border border-black/20 text-white shadow-lg"
+					class="hamburger-menu bg-accent left-0 mt-2 w-48 rounded border-black/20 text-white shadow-lg absolute top-full max-w-[90vw] border"
 					transition:fade={{ duration: 100 }}
 					id="main-menu"
 				>
 					<a
 						href="https://ampmod.codeberg.page/credits.html"
-						class="block px-4 py-2 font-bold hover:bg-black/5"
+						class="px-4 py-2 font-bold hover:bg-black/5 block"
 						on:click={toggleMenu}>Credits</a
 					>
 					<a
 						href="https://ampmod.flarum.cloud"
-						class="block px-4 py-2 font-bold hover:bg-black/5"
+						class="px-4 py-2 font-bold hover:bg-black/5 block"
 						on:click={toggleMenu}>Discuss</a
 					>
 					<a
 						href="https://codeberg.org/AmpMod"
-						class="block px-4 py-2 font-bold hover:bg-black/5"
+						class="px-4 py-2 font-bold hover:bg-black/5 block"
 						on:click={toggleMenu}>Contribute</a
 					>
 					<a
 						href="https://ampmod.codeberg.page/editor.html"
-						class="block px-4 py-2 font-bold hover:bg-black/5"
+						class="px-4 py-2 font-bold hover:bg-black/5 block"
 						on:click={toggleMenu}>Create</a
 					>
-					<hr class="my-1 border-t border-black/20" />
+					<hr class="my-1 border-black/20 border-t" />
 					<a
 						href="/settings"
-						class="block px-4 py-2 font-bold hover:bg-black/5"
+						class="px-4 py-2 font-bold hover:bg-black/5 block"
 						on:click={toggleMenu}>Settings</a
 					>
 					<input
 						type="text"
 						placeholder="Search for projects..."
 						bind:value={searchQuery}
-						class="w-full rounded bg-transparent p-2 text-white placeholder:text-white/70 focus:bg-white focus:text-black focus:outline-none"
+						class="rounded p-2 text-white placeholder:text-white/70 focus:bg-white focus:text-black w-full bg-transparent focus:outline-none"
 					/>
 				</div>
 			{/if}
@@ -155,7 +155,7 @@
 			/>
 		</a>
 
-		<div class="hidden items-center gap-2 md:flex">
+		<div class="gap-2 md:flex hidden items-center">
 			<a href="/editor" class="header-link rounded px-3 py-2 font-bold hover:bg-black/10">Create</a>
 			<a
 				href="https://ampmod.codeberg.page/credits.html"
@@ -171,22 +171,22 @@
 			>
 		</div>
 
-		<nav class="flex items-center justify-center gap-2">
+		<nav class="gap-2 flex items-center justify-center">
 			{#if $isLoggedIn}
 				<a
 					href="/messages"
-					class="inline-flex h-6 min-h-[44px] min-w-[44px] items-center justify-center rounded px-2 py-1"
+					class="h-6 rounded px-2 py-1 inline-flex min-h-[44px] min-w-[44px] items-center justify-center"
 					title="Messages"><Mail /></a
 				>
 				<a
 					href="/mystuff"
-					class="inline-flex h-6 min-h-[44px] min-w-[44px] items-center justify-center rounded px-2 py-1"
+					class="h-6 rounded px-2 py-1 inline-flex min-h-[44px] min-w-[44px] items-center justify-center"
 					title="My Stuff"><FolderOpen /></a
 				>
 
 				<div class="profile-dropdown relative flex-shrink-0">
 					<button
-						class="profile-button flex cursor-pointer items-center gap-1 rounded px-3 py-2 font-bold text-white hover:bg-black/10"
+						class="profile-button gap-1 rounded px-3 py-2 font-bold text-white hover:bg-black/10 flex cursor-pointer items-center"
 						on:click={toggleProfile}
 						aria-expanded={isProfileOpen}
 						aria-controls="profile-menu"
@@ -196,24 +196,24 @@
 					</button>
 					{#if isProfileOpen}
 						<div
-							class="bg-accent absolute right-0 top-full z-20 mt-2 w-48 max-w-[90vw] rounded border border-black/20 text-white shadow-lg"
+							class="bg-accent right-0 mt-2 w-48 rounded border-black/20 text-white shadow-lg absolute top-full z-20 max-w-[90vw] border"
 							transition:fade={{ duration: 100 }}
 							id="profile-menu"
 						>
 							<a
 								href={`/@${$username}`}
-								class="block px-4 py-2 font-bold hover:bg-black/5"
+								class="px-4 py-2 font-bold hover:bg-black/5 block"
 								on:click={closeProfile}>Profile</a
 							>
 							<a
 								href="/settings"
-								class="block px-4 py-2 font-bold hover:bg-black/5"
+								class="px-4 py-2 font-bold hover:bg-black/5 block"
 								on:click={closeProfile}>Settings</a
 							>
-							<hr class="my-1 border-t border-black/20" />
+							<hr class="my-1 border-black/20 border-t" />
 							<a
 								href="/logout"
-								class="block px-4 py-2 font-bold hover:bg-black/5"
+								class="px-4 py-2 font-bold hover:bg-black/5 block"
 								on:click={closeProfile}>Log Out</a
 							>
 						</div>
@@ -222,19 +222,19 @@
 			{:else}
 				<a
 					href="/settings"
-					class="header-link hidden rounded px-3 py-2 font-bold hover:bg-black/10 md:block"
+					class="header-link rounded px-3 py-2 font-bold hover:bg-black/10 md:block hidden"
 					>Settings</a
 				>
 
 				<div class="login-dropdown relative">
 					<button
-						class="header-link cursor-pointer rounded px-3 py-2 font-bold hover:bg-black/10"
+						class="header-link rounded px-3 py-2 font-bold hover:bg-black/10 cursor-pointer"
 						on:click={toggleLogin}
 						aria-controls="login-menu">Log in</button
 					>
 					{#if isLoginOpen}
 						<div
-							class="w-50 bg-accent absolute right-0 top-full z-20 mt-2 flex max-w-[95vw] flex-col gap-4 rounded border border-black/20 p-6 text-white shadow-lg"
+							class="w-50 bg-accent right-0 mt-2 gap-4 rounded border-black/20 p-6 text-white shadow-lg absolute top-full z-20 flex max-w-[95vw] flex-col border"
 							id="login-menu"
 							style="min-width:260px;"
 							transition:fade={{ duration: 100 }}

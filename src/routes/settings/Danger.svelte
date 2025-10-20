@@ -134,7 +134,7 @@
 </script>
 
 <!-- Main content container - removed outer padding, background, shadow, border -->
-<div class="text-text dark:text-text-dark mx-auto flex flex-col gap-8 font-sans">
+<div class="text-text dark:text-text-dark gap-8 font-sans mx-auto flex flex-col">
 	<!-- Change Username Section -->
 	<section>
 		<h3 class="mb-4 text-2xl font-bold">Change Username</h3>
@@ -142,17 +142,17 @@
 			Your old username will redirect to your new username until it is taken by someone else.
 		</p>
 		<!-- Form - removed inner padding, border, background, shadow -->
-		<form method="POST" class="mt-6 flex flex-col gap-4">
+		<form method="POST" class="mt-6 gap-4 flex flex-col">
 			<input
 				type="text"
 				name="username"
 				placeholder="New Username"
 				required
-				class="border-border text-text focus:ring-accent dark:border-border-dark rounded-md border bg-white p-3 transition duration-200 focus:border-transparent focus:outline-none focus:ring-2 dark:bg-gray-700 dark:text-white"
+				class="border-border text-text focus:ring-accent dark:border-border-dark rounded-md bg-white p-3 dark:bg-gray-700 dark:text-white border transition duration-200 focus:border-transparent focus:ring-2 focus:outline-none"
 			/>
 			<button
 				type="submit"
-				class="bg-accent hover:bg-accent-secondary focus:ring-accent rounded-md px-6 py-3 font-semibold text-white shadow-md transition duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 dark:focus:ring-offset-gray-800"
+				class="bg-accent hover:bg-accent-secondary focus:ring-accent rounded-md px-6 py-3 font-semibold text-white shadow-md dark:focus:ring-offset-gray-800 transition duration-200 focus:ring-2 focus:ring-offset-2 focus:outline-none"
 			>
 				Change Username
 			</button>
@@ -162,24 +162,24 @@
 	<!-- Delete Account Section -->
 	<section>
 		<h3 class="mb-4 text-2xl font-bold">Delete Account</h3>
-		<strong class="mb-2 block text-red-600 dark:text-red-400"
+		<strong class="mb-2 text-red-600 dark:text-red-400 block"
 			>This will PERMANENTLY delete your account, including your profile, your projects, and any
 			other data. Note that moderators can still see your account and other data. If you are
 			requesting deletion for privacy reasons, please contact us at [TODO: fill this in].
 		</strong>
 		<p class="mb-4 text-sm">To delete your account, please enter your password:</p>
 		<!-- Form - removed inner padding, border, background, shadow -->
-		<form method="POST" on:submit={handleDeleteAccountSubmit} class="mt-6 flex flex-col gap-4">
+		<form method="POST" on:submit={handleDeleteAccountSubmit} class="mt-6 gap-4 flex flex-col">
 			<input
 				type="password"
 				name="password"
 				placeholder="Password"
 				required
-				class="border-border text-text focus:ring-accent dark:border-border-dark rounded-md border bg-white p-3 transition duration-200 focus:border-transparent focus:outline-none focus:ring-2 dark:bg-gray-700 dark:text-white"
+				class="border-border text-text focus:ring-accent dark:border-border-dark rounded-md bg-white p-3 dark:bg-gray-700 dark:text-white border transition duration-200 focus:border-transparent focus:ring-2 focus:outline-none"
 			/>
 			<button
 				type="submit"
-				class="rounded-md bg-red-600 px-6 py-3 font-semibold text-white shadow-md transition duration-200 hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 dark:focus:ring-offset-gray-800"
+				class="rounded-md bg-red-600 px-6 py-3 font-semibold text-white shadow-md hover:bg-red-700 focus:ring-red-500 dark:focus:ring-offset-gray-800 transition duration-200 focus:ring-2 focus:ring-offset-2 focus:outline-none"
 			>
 				Delete Account
 			</button>

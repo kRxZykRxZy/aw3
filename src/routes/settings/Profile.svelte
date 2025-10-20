@@ -37,16 +37,16 @@
 </script>
 
 <h3 class="mb-4 text-xl font-semibold">Information</h3>
-<div class="mb-4 flex items-center gap-4">
-	<div class="relative h-20 w-20 cursor-pointer" on:click={onAvatarClick}>
-		<img src={avatarUrl} alt="User Icon" class="h-full w-full rounded object-cover" />
+<div class="mb-4 gap-4 flex items-center">
+	<div class="h-20 w-20 relative cursor-pointer" on:click={onAvatarClick}>
+		<img src={avatarUrl} alt="User Icon" class="rounded h-full w-full object-cover" />
 		{#if uploading}
-			<div class="absolute inset-0 flex items-center justify-center rounded bg-black/40">
+			<div class="inset-0 rounded bg-black/40 absolute flex items-center justify-center">
 				<Spinner colour="#fff" />
 			</div>
 		{:else}
 			<div
-				class="absolute inset-0 flex items-center justify-center rounded bg-black/40 text-white opacity-0 hover:opacity-100"
+				class="inset-0 rounded bg-black/40 text-white absolute flex items-center justify-center opacity-0 hover:opacity-100"
 			>
 				<Pencil />
 			</div>
