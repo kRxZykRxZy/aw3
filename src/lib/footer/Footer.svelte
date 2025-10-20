@@ -19,8 +19,8 @@
 	let selectedFact = Math.floor(Math.random() * funFacts.length);
 </script>
 
-<footer class="bg-footer text-text dark:bg-footer-dark dark:text-text-dark mt-20 px-4 py-12 w-full">
-	<div class="max-w-7xl gap-x-8 gap-y-12 sm:grid-cols-3 md:grid-cols-6 mx-auto grid grid-cols-2">
+<footer class="bg-footer text-text dark:bg-footer-dark dark:text-text-dark mt-20 w-full px-4 py-12">
+	<div class="mx-auto grid max-w-7xl grid-cols-2 gap-x-8 gap-y-12 sm:grid-cols-3 md:grid-cols-6">
 		<nav aria-label="Community Links" class="space-y-4">
 			<h4 class="text-primary-dark dark:text-primary-light text-lg font-semibold">Community</h4>
 			<ul class="space-y-2 text-sm">
@@ -54,7 +54,7 @@
 				</li>
 				<li>
 					<span
-						class="text-gray-500 cursor-not-allowed"
+						class="cursor-not-allowed text-gray-500"
 						title="Statistics feature is not available yet">Statistics</span
 					>
 				</li>
@@ -142,7 +142,7 @@
 			</ul>
 		</div>
 
-		<div class="space-y-4 md:col-span-2 md:col-start-5 col-span-2 text-right">
+		<div class="col-span-2 space-y-4 text-right md:col-span-2 md:col-start-5">
 			<div class="space-y-2 text-sm">
 				<p class="text-gray-400">
 					AmpMod is not affiliated with Scratch, the Scratch Team, the Scratch Foundation, or the

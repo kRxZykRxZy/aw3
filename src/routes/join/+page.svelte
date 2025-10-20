@@ -275,7 +275,7 @@
 			<img src={logoUrl} alt="AmpMod" class="h-8" />
 		</a>
 	</div>
-	<div class="bottom-4 left-4 text-white fixed z-40">
+	<div class="fixed bottom-4 left-4 z-40 text-white">
 		<a href="/privacy" class="text-sm text-white underline transition">Privacy Policy</a> |
 		<a href="/terms" class="text-sm text-white underline transition">Terms of Use</a>
 		|
@@ -283,16 +283,16 @@
 		>
 	</div>
 	<div
-		class="bg-background text-text dark:border-border-dark dark:bg-background-dark dark:text-text-dark mt-4 max-w-xl rounded-lg border-gray-300 p-8 font-sans shadow-lg mx-auto border"
+		class="bg-background text-text dark:border-border-dark dark:bg-background-dark dark:text-text-dark mx-auto mt-4 max-w-xl rounded-lg border border-gray-300 p-8 font-sans shadow-lg"
 	>
-		<h1 class="mb-6 text-2xl font-bold text-center">Join AmpMod</h1>
+		<h1 class="mb-6 text-center text-2xl font-bold">Join AmpMod</h1>
 
 		{#if step === 1}
 			<p class="mb-2 text-center">
 				It's free and easy to sign up for an AmpMod account. Quickly join using one of these
 				services, or choose "Don't link" to register an account manually.
 			</p>
-			<p class="mb-4 text-sm text-center">
+			<p class="mb-4 text-center text-sm">
 				These services are not affiliated with AmpMod. Your username on AmpMod may be modified to
 				follow our guidelines and technical limitations.
 			</p>
@@ -315,13 +315,13 @@
 				You already seem to be logged into AmpMod.
 			</p>
 		{:else}
-			<form on:submit|preventDefault={handleJoin} class="gap-6 flex flex-col">
+			<form on:submit|preventDefault={handleJoin} class="flex flex-col gap-6">
 				{#if step === 1}
 					<div class="animate-fade-in flex flex-col">
-						<div class="mb-6 gap-3 flex flex-col">
+						<div class="mb-6 flex flex-col gap-3">
 							<button
 								type="button"
-								class="rounded-xl p-4 text-xl font-bold text-white flex cursor-pointer items-center border border-[#714eb6] bg-[#855cd6] align-middle hover:bg-[#714eb6]"
+								class="flex cursor-pointer items-center rounded-xl border border-[#714eb6] bg-[#855cd6] p-4 align-middle text-xl font-bold text-white hover:bg-[#714eb6]"
 								on:click={loginWithScratch}
 							>
 								<SiScratch size={32} />
@@ -330,7 +330,7 @@
 
 							<button
 								type="button"
-								class="rounded-xl p-4 text-xl font-bold text-white flex cursor-pointer items-center border border-[#3d7cae] bg-[#4793cc] align-middle hover:bg-[#3d7cae]"
+								class="flex cursor-pointer items-center rounded-xl border border-[#3d7cae] bg-[#4793cc] p-4 align-middle text-xl font-bold text-white hover:bg-[#3d7cae]"
 								on:click={() =>
 									handleSocialJoin('Codeberg', 'https://codeberg.org/oauth-mock-ampmod')}
 							>
@@ -340,7 +340,7 @@
 
 							<button
 								type="button"
-								class="rounded-xl bg-black p-4 text-xl font-bold text-white flex cursor-pointer items-center border border-[#1a1a1a] align-middle hover:bg-[#1a1a1a]"
+								class="flex cursor-pointer items-center rounded-xl border border-[#1a1a1a] bg-black p-4 align-middle text-xl font-bold text-white hover:bg-[#1a1a1a]"
 								on:click={() => handleSocialJoin('GitHub', 'https://github.com/oauth-mock-ampmod')}
 							>
 								<SiGithub size={32} />
@@ -349,7 +349,7 @@
 
 							<button
 								type="button"
-								class="rounded-xl border-gray-300 bg-gray-100 p-4 text-xl font-bold text-gray-800 hover:bg-gray-200 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:hover:bg-gray-600 flex cursor-pointer items-center border align-middle"
+								class="flex cursor-pointer items-center rounded-xl border border-gray-300 bg-gray-100 p-4 align-middle text-xl font-bold text-gray-800 hover:bg-gray-200 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:hover:bg-gray-600"
 								on:click={() =>
 									handleSocialJoin('AmpMod Forums', 'https://ampmod.flarum.cloud/oauth-mock-join')}
 							>
@@ -359,7 +359,7 @@
 
 							<button
 								type="button"
-								class="rounded-xl p-4 text-xl font-bold text-white flex cursor-pointer items-center border border-[#d07860] bg-[#e98a6f] align-middle hover:bg-[#d07860]"
+								class="flex cursor-pointer items-center rounded-xl border border-[#d07860] bg-[#e98a6f] p-4 align-middle text-xl font-bold text-white hover:bg-[#d07860]"
 								on:click={() =>
 									handleSocialJoin(
 										'Miraheze',
@@ -384,12 +384,12 @@
 							type="text"
 							bind:value={username}
 							required
-							class="text-text focus:ring-accent dark:border-border-dark dark:text-text-dark rounded border-gray-300 bg-white p-2 dark:bg-gray-800 border focus:ring-2 focus:outline-none"
+							class="text-text focus:ring-accent dark:border-border-dark dark:text-text-dark rounded border border-gray-300 bg-white p-2 focus:outline-none focus:ring-2 dark:bg-gray-800"
 							autocomplete="username"
 						/>
 						<p class="mt-1 text-gray-700 dark:text-gray-300">Must:</p>
-						<ul class="mt-1 pl-4 text-sm text-gray-500 dark:text-gray-400 list-none">
-							<li class:valid={isUsernameValidLength(username)} class="gap-2 flex items-center">
+						<ul class="mt-1 list-none pl-4 text-sm text-gray-500 dark:text-gray-400">
+							<li class:valid={isUsernameValidLength(username)} class="flex items-center gap-2">
 								{#if isUsernameValidLength(username)}<Check color="#22c55e" size={18} />{:else}<X
 										color="#ef4444"
 										size={18}
@@ -397,7 +397,7 @@
 							</li>
 							<li
 								class:valid={doesUsernameContainValidChars(username)}
-								class="gap-2 flex items-center"
+								class="flex items-center gap-2"
 							>
 								{#if doesUsernameContainValidChars(username)}<Check
 										color="#22c55e"
@@ -405,13 +405,13 @@
 									/>{:else}<X color="#ef4444" size={18} />{/if} Contain only letters, numbers, hyphens
 								and underscores
 							</li>
-							<li class:valid={isUsernameNotTaken(username)} class="gap-2 flex items-center">
+							<li class:valid={isUsernameNotTaken(username)} class="flex items-center gap-2">
 								{#if isUsernameNotTaken(username)}<Check color="#22c55e" size={18} />{:else}<X
 										color="#ef4444"
 										size={18}
 									/>{/if} Not be taken
 							</li>
-							<li class:valid={isUsernameAppropriate(username)} class="gap-2 flex items-center">
+							<li class:valid={isUsernameAppropriate(username)} class="flex items-center gap-2">
 								{#if isUsernameAppropriate(username)}<Check color="#22c55e" size={18} />{:else}<X
 										color="#ef4444"
 										size={18}
@@ -429,7 +429,7 @@
 							type="password"
 							bind:value={password}
 							required
-							class="text-text focus:ring-accent dark:border-border-dark dark:text-text-dark mb-2 rounded border-gray-300 bg-white p-2 dark:bg-gray-800 border focus:ring-2 focus:outline-none"
+							class="text-text focus:ring-accent dark:border-border-dark dark:text-text-dark mb-2 rounded border border-gray-300 bg-white p-2 focus:outline-none focus:ring-2 dark:bg-gray-800"
 							autocomplete="new-password"
 						/>
 						<label for="confirmPassword" class="mb-2 font-medium">Confirm Password</label>
@@ -438,21 +438,21 @@
 							type="password"
 							bind:value={confirmPassword}
 							required
-							class="text-text focus:ring-accent dark:border-border-dark dark:text-text-dark rounded border-gray-300 bg-white p-2 dark:bg-gray-800 border focus:ring-2 focus:outline-none"
+							class="text-text focus:ring-accent dark:border-border-dark dark:text-text-dark rounded border border-gray-300 bg-white p-2 focus:outline-none focus:ring-2 dark:bg-gray-800"
 							autocomplete="new-password"
 						/>
 						{#if password !== confirmPassword && confirmPassword}
 							<p class="mt-1 text-sm text-red-600 dark:text-red-400">❌ Passwords do not match!</p>
 						{/if}
 						<p class="mt-1 text-gray-700 dark:text-gray-300">Must:</p>
-						<ul class="mt-1 pl-4 text-sm text-gray-500 dark:text-gray-400 list-none">
-							<li class:valid={isPasswordValidLength(password)} class="gap-2 flex items-center">
+						<ul class="mt-1 list-none pl-4 text-sm text-gray-500 dark:text-gray-400">
+							<li class:valid={isPasswordValidLength(password)} class="flex items-center gap-2">
 								{#if isPasswordValidLength(password)}<Check color="#22c55e" size={18} />{:else}<X
 										color="#ef4444"
 										size={18}
 									/>{/if} Be at least 6 characters long
 							</li>
-							<li class:valid={isPasswordNotCommon(password)} class="gap-2 flex items-center">
+							<li class:valid={isPasswordNotCommon(password)} class="flex items-center gap-2">
 								{#if isPasswordNotCommon(password)}<Check color="#22c55e" size={18} />{:else}<X
 										color="#ef4444"
 										size={18}
@@ -460,7 +460,7 @@
 							</li>
 							<li
 								class:valid={password.toLowerCase() !== username.toLowerCase()}
-								class="gap-2 flex items-center"
+								class="flex items-center gap-2"
 							>
 								{#if password.toLowerCase() !== username.toLowerCase()}<Check
 										color="#22c55e"
@@ -478,10 +478,10 @@
 							id="email"
 							type="email"
 							bind:value={email}
-							class="text-text focus:ring-accent dark:border-border-dark dark:text-text-dark mb-2 rounded border-gray-300 bg-white p-2 dark:bg-gray-800 border focus:ring-2 focus:outline-none"
+							class="text-text focus:ring-accent dark:border-border-dark dark:text-text-dark mb-2 rounded border border-gray-300 bg-white p-2 focus:outline-none focus:ring-2 dark:bg-gray-800"
 							autocomplete="email"
 						/>
-						<div class="mt-2 gap-2 flex items-center">
+						<div class="mt-2 flex items-center gap-2">
 							<input
 								type="checkbox"
 								id="termscheck"
@@ -502,7 +502,7 @@
 				<div class="mt-6 flex justify-between">
 					<button
 						type="button"
-						class="rounded-lg bg-gray-200 px-4 py-2 font-bold text-gray-700 hover:bg-gray-300 dark:bg-gray-700 dark:text-gray-300 dark:hover:bg-gray-600 transition"
+						class="rounded-lg bg-gray-200 px-4 py-2 font-bold text-gray-700 transition hover:bg-gray-300 dark:bg-gray-700 dark:text-gray-300 dark:hover:bg-gray-600"
 						on:click={prevStep}
 						disabled={step === 1}
 					>
@@ -511,7 +511,7 @@
 					{#if step < totalSteps}
 						<button
 							type="button"
-							class="bg-accent rounded-lg px-4 py-2 font-bold text-white hover:bg-green-600 transition disabled:cursor-not-allowed disabled:opacity-50"
+							class="bg-accent rounded-lg px-4 py-2 font-bold text-white transition hover:bg-green-600 disabled:cursor-not-allowed disabled:opacity-50"
 							on:click={() => {
 								if (
 									// Only validate if user is actually entering data in that step
@@ -535,7 +535,7 @@
 					{:else}
 						<button
 							type="submit"
-							class="bg-accent rounded-lg px-4 py-2 font-bold text-white hover:bg-green-600 transition disabled:cursor-not-allowed disabled:opacity-50"
+							class="bg-accent rounded-lg px-4 py-2 font-bold text-white transition hover:bg-green-600 disabled:cursor-not-allowed disabled:opacity-50"
 							disabled={!canProceedStep4Terms()}
 						>
 							Join
@@ -544,7 +544,7 @@
 				</div>
 			</form>
 
-			<div class="mt-6 gap-2 flex items-center justify-center">
+			<div class="mt-6 flex items-center justify-center gap-2">
 				{#each Array(totalSteps) as _, i}
 					<div
 						class="h-2 w-8 rounded-full transition-all duration-300 {i + 1 <= step
@@ -557,13 +557,13 @@
 	</div>
 
 	{#if showModal}
-		<div class="inset-0 bg-black bg-opacity-50 fixed z-50 flex items-center justify-center">
+		<div class="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
 			<div
-				class="text-text dark:border-border-dark dark:bg-background-dark dark:text-text-dark max-w-sm rounded-lg border-gray-300 bg-white p-6 shadow-xl w-full border text-center"
+				class="text-text dark:border-border-dark dark:bg-background-dark dark:text-text-dark w-full max-w-sm rounded-lg border border-gray-300 bg-white p-6 text-center shadow-xl"
 			>
 				<p class="mb-4 text-lg font-semibold">{modalMessage}</p>
 				<button
-					class="bg-accent rounded-lg px-4 py-2 font-bold text-white hover:bg-green-600 transition"
+					class="bg-accent rounded-lg px-4 py-2 font-bold text-white transition hover:bg-green-600"
 					on:click={closeMessageBox}
 				>
 					OK

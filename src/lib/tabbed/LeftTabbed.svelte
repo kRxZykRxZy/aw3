@@ -19,8 +19,8 @@
 	// or it will just update the prop's value within this component instance.
 </script>
 
-<div class="md:flex-row flex min-h-[600px] flex-col overflow-hidden">
-	<div class="mr-2 min-w-60 py-2 md:flex-col flex flex-row overflow-x-scroll">
+<div class="flex min-h-[600px] flex-col overflow-hidden md:flex-row">
+	<div class="mr-2 flex min-w-60 flex-row overflow-x-scroll py-2 md:flex-col">
 		{#each tabs as tab, i}
 			<button
 				class="
@@ -30,13 +30,13 @@
                     aria-selected:border-accent aria-selected:bg-footer
                     aria-selected:text-accent
                     dark:border-border-dark dark:text-text-dark dark:hover:bg-accent-secondary/10 dark:focus:bg-accent-secondary/10 dark:aria-selected:bg-footer-dark m-2
-                    rounded-lg
-                    px-4 py-2
-                    text-lg font-light
-                    ease-in-out aria-selected:font-medium md:flex-none md:px-6 md:py-4
-                    md:text-left md:text-xl
-                    dark:aria-selected:font-bold flex-1 cursor-pointer border
-                    bg-transparent text-center duration-200 outline-none
+                    flex-1
+                    cursor-pointer rounded-lg
+                    border bg-transparent
+                    px-4 py-2 text-center text-lg font-light
+                    outline-none duration-200
+                    ease-in-out aria-selected:font-medium md:flex-none md:px-6
+                    md:py-4 md:text-left md:text-xl dark:aria-selected:font-bold
                 "
 				onclick={() => setActive(i)}
 				tabindex={active === i ? 0 : -1}
@@ -48,7 +48,7 @@
 		{/each}
 	</div>
 	<div
-		class="border-border bg-footer text-text dark:border-border-dark dark:bg-footer-dark dark:text-text-dark min-w-0 rounded-lg p-8 flex-1 border"
+		class="border-border bg-footer text-text dark:border-border-dark dark:bg-footer-dark dark:text-text-dark min-w-0 flex-1 rounded-lg border p-8"
 	>
 		{#if tabs[active]}
 			{#if typeof tabs[active].content === 'string'}

@@ -19,17 +19,17 @@
 
 <div class="m-auto min-h-screen">
 	<div>
-		<header class="bg-accent-secondary px-6 py-10 text-white w-full text-center">
+		<header class="bg-accent-secondary w-full px-6 py-10 text-center text-white">
 			<h1 class="mb-8 text-5xl font-black">Low floor. Wide walls. <em>No</em> ceiling.</h1>
-			<p class="max-w-3xl text-xl mx-auto">
+			<p class="mx-auto max-w-3xl text-xl">
 				AmpMod is a powerful block-based programming language built on Scratch 3.0 that takes away
 				most of the limitations of block-based programming.
 			</p>
 			<div class="mt-8">
 				<div
-					class="rounded-t-xl border-gray-800 bg-gray-800 shadow-xl md:max-w-[768px] dark:border-gray-800 relative mx-auto max-w-[450px] border-[8px]"
+					class="relative mx-auto max-w-[450px] rounded-t-xl border-[8px] border-gray-800 bg-gray-800 shadow-xl md:max-w-[768px] dark:border-gray-800"
 				>
-					<div class="rounded-lg bg-white dark:bg-gray-800 overflow-hidden">
+					<div class="overflow-hidden rounded-lg bg-white dark:bg-gray-800">
 						<img
 							src={blobLight}
 							alt="A screenshot of AmpMod's interface in light mode."
@@ -45,11 +45,11 @@
 					</div>
 				</div>
 				<div
-					class="rounded-b-xl bg-gray-900 md:max-w-[900px] dark:bg-gray-700 relative mx-auto h-[12px] max-w-[550px]"
+					class="relative mx-auto h-[12px] max-w-[550px] rounded-b-xl bg-gray-900 md:max-w-[900px] dark:bg-gray-700"
 				>
-					<div class="inset-x-0 top-0 absolute -mt-px flex justify-center">
+					<div class="absolute inset-x-0 top-0 -mt-px flex justify-center">
 						<div
-							class="rounded-b-lg bg-gray-700 md:h-[4px] md:w-[80px] dark:bg-gray-800 h-[2px] w-[50px]"
+							class="h-[2px] w-[50px] rounded-b-lg bg-gray-700 md:h-[4px] md:w-[80px] dark:bg-gray-800"
 						></div>
 					</div>
 				</div>
@@ -62,8 +62,8 @@
 		</header>
 	</div>
 
-	<section class="px-6 py-16 container mx-auto">
-		<div class="gap-8 md:grid-cols-3 grid grid-cols-1">
+	<section class="container mx-auto px-6 py-16">
+		<div class="grid grid-cols-1 gap-8 md:grid-cols-3">
 			<div class="rounded-lg bg-gray-100 p-6 shadow-lg dark:bg-gray-800">
 				<h3 class="text-accent mb-4 text-xl font-black">Advanced</h3>
 				<p class="text-gray-700 dark:text-gray-300">
@@ -103,12 +103,12 @@
 	</section>
 
 	<section class="py-16">
-		<div class="px-6 container mx-auto text-center">
+		<div class="container mx-auto px-6 text-center">
 			<h2 class="text-accent mb-8 text-3xl font-bold">Need Help?</h2>
-			<div class="gap-8 md:grid-cols-4 grid grid-cols-1">
+			<div class="grid grid-cols-1 gap-8 md:grid-cols-4">
 				<div>
 					<a
-						class="bg-accent rounded-lg px-6 py-4 text-lg font-bold text-white hover:shadow-lg block transition-shadow"
+						class="bg-accent block rounded-lg px-6 py-4 text-lg font-bold text-white transition-shadow hover:shadow-lg"
 						href="https://ampmod.codeberg.page/manual"
 						target="_blank"
 						rel="noopener noreferrer"
@@ -122,7 +122,7 @@
 				</div>
 				<div>
 					<a
-						class="bg-accent rounded-lg px-6 py-4 text-lg font-bold text-white hover:shadow-lg block transition-shadow"
+						class="bg-accent block rounded-lg px-6 py-4 text-lg font-bold text-white transition-shadow hover:shadow-lg"
 						href="https://ampmod.miraheze.org"
 						target="_blank"
 						rel="noopener noreferrer"
@@ -136,7 +136,7 @@
 				</div>
 				<div>
 					<a
-						class="bg-accent rounded-lg px-6 py-4 text-lg font-bold text-white hover:shadow-lg block transition-shadow"
+						class="bg-accent block rounded-lg px-6 py-4 text-lg font-bold text-white transition-shadow hover:shadow-lg"
 						href="https://ampmod.flarum.cloud"
 						target="_blank"
 						rel="noopener noreferrer"
@@ -150,7 +150,7 @@
 				</div>
 				<div>
 					<a
-						class="bg-accent rounded-lg px-6 py-4 text-lg font-bold text-white hover:shadow-lg block transition-shadow"
+						class="bg-accent block rounded-lg px-6 py-4 text-lg font-bold text-white transition-shadow hover:shadow-lg"
 						href="https://ampmod.flarum.cloud/blog"
 						target="_blank"
 						rel="noopener noreferrer"
@@ -166,12 +166,12 @@
 		</div>
 	</section>
 
-	<section class="px-6 py-16 container mx-auto text-center">
+	<section class="container mx-auto px-6 py-16 text-center">
 		<h2 class="text-accent mb-8 text-3xl font-bold">Contribute to AmpMod!</h2>
-		<div class="gap-8 md:grid-cols-3 grid grid-cols-1">
+		<div class="grid grid-cols-1 gap-8 md:grid-cols-3">
 			<div>
 				<a
-					class="bg-accent rounded-lg px-6 py-4 text-lg font-bold text-white hover:shadow-lg block transition-shadow"
+					class="bg-accent block rounded-lg px-6 py-4 text-lg font-bold text-white transition-shadow hover:shadow-lg"
 					href="https://ampmod.codeberg.page/manual/dev"
 					target="_blank"
 					rel="noopener noreferrer"
@@ -185,7 +185,7 @@
 			</div>
 			<div>
 				<a
-					class="bg-accent rounded-lg px-6 py-4 text-lg font-bold text-white hover:shadow-lg block transition-shadow"
+					class="bg-accent block rounded-lg px-6 py-4 text-lg font-bold text-white transition-shadow hover:shadow-lg"
 					href="https://codeberg.org/ampmod"
 					target="_blank"
 					rel="noopener noreferrer"
@@ -199,7 +199,7 @@
 			</div>
 			<div>
 				<a
-					class="bg-accent rounded-lg px-6 py-4 text-lg font-bold text-white hover:shadow-lg block transition-shadow"
+					class="bg-accent block rounded-lg px-6 py-4 text-lg font-bold text-white transition-shadow hover:shadow-lg"
 					href="https://ampmod.flarum.cloud/t/suggestions"
 					target="_blank"
 					rel="noopener noreferrer"

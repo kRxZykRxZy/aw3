@@ -10,25 +10,25 @@ const path_to_layout = join(__dirname, './src/mdsvex.svelte');
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
-  // Preprocessors
-  preprocess: [vitePreprocess(), mdsvex({ layout: path_to_layout })],
+	// Preprocessors
+	preprocess: [vitePreprocess(), mdsvex({ layout: path_to_layout })],
 
-  extensions: ['.svelte', '.svx'],
+	extensions: ['.svelte', '.svx'],
 
-  kit: {
-    // Use Node adapter
-    adapter: adapter({
-      out: 'build', // explicitly set output folder
-      precompress: false
-    }),
+	kit: {
+		// Use Node adapter
+		adapter: adapter({
+			out: 'build', // explicitly set output folder
+			precompress: false
+		}),
 
-    // Optional: configure aliases
-    alias: {
-      $components: 'src/lib',
-      $lib: 'src/lib',
-      $stores: 'src/stores'
-    }
-  }
+		// Optional: configure aliases
+		alias: {
+			$components: 'src/lib',
+			$lib: 'src/lib',
+			$stores: 'src/stores'
+		}
+	}
 };
 
 export default config;

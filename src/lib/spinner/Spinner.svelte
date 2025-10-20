@@ -8,7 +8,7 @@ The above copyright notice and this permission notice shall be included in all c
 <div role="status">
 	<svg
 		aria-hidden="true"
-		class="fill-accent h-8 w-8 animate-spin text-gray-200 dark:text-gray-600 m-auto"
+		class="fill-accent m-auto h-8 w-8 animate-spin text-gray-200 dark:text-gray-600"
 		viewBox="0 0 100 101"
 		fill="none"
 		xmlns="http://www.w3.org/2000/svg"

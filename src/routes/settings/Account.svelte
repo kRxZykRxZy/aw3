@@ -4,9 +4,9 @@
 
 <div class="linked-accounts">
 	<h3 class="mb-4 text-xl font-semibold text-gray-900 dark:text-gray-100">Linked Accounts</h3>
-	<ul class="m-0 gap-2 p-0 flex list-none flex-col">
+	<ul class="m-0 flex list-none flex-col gap-2 p-0">
 		<li
-			class="rounded-lg border-gray-300 bg-gray-50 p-3 hover:bg-green-50 dark:border-gray-600 dark:bg-gray-800 dark:hover:bg-green-900/20 flex items-center justify-between border transition-colors duration-300"
+			class="flex items-center justify-between rounded-lg border border-gray-300 bg-gray-50 p-3 transition-colors duration-300 hover:bg-green-50 dark:border-gray-600 dark:bg-gray-800 dark:hover:bg-green-900/20"
 		>
 			<div class="flex flex-col">
 				<span class="font-bold text-gray-800 dark:text-gray-200">Scratch</span>
@@ -17,47 +17,47 @@
 			</div>
 			<a
 				href="/"
-				class="bg-accent hover:bg-accent-secondary ml-1 rounded-md px-3 py-1.5 text-sm text-white cursor-pointer no-underline transition-colors"
+				class="bg-accent hover:bg-accent-secondary ml-1 cursor-pointer rounded-md px-3 py-1.5 text-sm text-white no-underline transition-colors"
 				>Link</a
 			>
 		</li>
 		<li
-			class="rounded-lg border-gray-300 bg-gray-50 p-3 hover:bg-green-50 dark:border-gray-600 dark:bg-gray-800 dark:hover:bg-green-900/20 flex items-center justify-between border transition-colors duration-300"
+			class="flex items-center justify-between rounded-lg border border-gray-300 bg-gray-50 p-3 transition-colors duration-300 hover:bg-green-50 dark:border-gray-600 dark:bg-gray-800 dark:hover:bg-green-900/20"
 		>
 			<span class="font-bold text-gray-800 dark:text-gray-200">Codeberg</span>
 			<a
 				href="/"
-				class="bg-accent hover:bg-accent-secondary rounded-md px-3 py-1.5 text-sm text-white cursor-pointer no-underline transition-colors"
+				class="bg-accent hover:bg-accent-secondary cursor-pointer rounded-md px-3 py-1.5 text-sm text-white no-underline transition-colors"
 				>Link</a
 			>
 		</li>
 		<li
-			class="rounded-lg border-gray-300 bg-gray-50 p-3 hover:bg-green-50 dark:border-gray-600 dark:bg-gray-800 dark:hover:bg-green-900/20 flex items-center justify-between border transition-colors duration-300"
+			class="flex items-center justify-between rounded-lg border border-gray-300 bg-gray-50 p-3 transition-colors duration-300 hover:bg-green-50 dark:border-gray-600 dark:bg-gray-800 dark:hover:bg-green-900/20"
 		>
 			<span class="font-bold text-gray-800 dark:text-gray-200">GitHub</span>
 			<a
 				href="/"
-				class="bg-accent hover:bg-accent-secondary rounded-md px-3 py-1.5 text-sm text-white cursor-pointer no-underline transition-colors"
+				class="bg-accent hover:bg-accent-secondary cursor-pointer rounded-md px-3 py-1.5 text-sm text-white no-underline transition-colors"
 				>Link</a
 			>
 		</li>
 		<li
-			class="rounded-lg border-gray-300 bg-gray-50 p-3 hover:bg-green-50 dark:border-gray-600 dark:bg-gray-800 dark:hover:bg-green-900/20 flex items-center justify-between border transition-colors duration-300"
+			class="flex items-center justify-between rounded-lg border border-gray-300 bg-gray-50 p-3 transition-colors duration-300 hover:bg-green-50 dark:border-gray-600 dark:bg-gray-800 dark:hover:bg-green-900/20"
 		>
 			<span class="font-bold text-gray-800 dark:text-gray-200">AmpMod Wiki</span>
 			<a
 				href="/"
-				class="bg-accent hover:bg-accent-secondary rounded-md px-3 py-1.5 text-sm text-white cursor-pointer no-underline transition-colors"
+				class="bg-accent hover:bg-accent-secondary cursor-pointer rounded-md px-3 py-1.5 text-sm text-white no-underline transition-colors"
 				>Link</a
 			>
 		</li>
 		<li
-			class="rounded-lg border-gray-300 bg-gray-50 p-3 hover:bg-green-50 dark:border-gray-600 dark:bg-gray-800 dark:hover:bg-green-900/20 flex items-center justify-between border transition-colors duration-300"
+			class="flex items-center justify-between rounded-lg border border-gray-300 bg-gray-50 p-3 transition-colors duration-300 hover:bg-green-50 dark:border-gray-600 dark:bg-gray-800 dark:hover:bg-green-900/20"
 		>
 			<span class="font-bold text-gray-800 dark:text-gray-200">AmpMod Forums</span>
 			<a
 				href="/"
-				class="bg-accent hover:bg-accent-secondary rounded-md px-3 py-1.5 text-sm text-white cursor-pointer no-underline transition-colors"
+				class="bg-accent hover:bg-accent-secondary cursor-pointer rounded-md px-3 py-1.5 text-sm text-white no-underline transition-colors"
 				>Link</a
 			>
 		</li>
@@ -71,7 +71,7 @@
 	guidelines, your account's reputation can be lowered.
 </i>
 
-<div class="mt-4 gap-4 pb-8 flex items-center justify-around text-center">
+<div class="mt-4 flex items-center justify-around gap-4 pb-8 text-center">
 	<div class="flex flex-col items-center">
 		<span class="text-5xl text-red-500">
 			<XCircle size="1em" stroke-width="2" />
@@ -92,7 +92,7 @@
 		<ArrowUp
 			size="24"
 			stroke-width="2"
-			class="-bottom-8 text-gray-900 dark:text-gray-100 absolute left-1/2 -translate-x-1/2"
+			class="absolute -bottom-8 left-1/2 -translate-x-1/2 text-gray-900 dark:text-gray-100"
 		/>
 	</div>
 </div>

@@ -72,6 +72,7 @@
 		"@node-rs/argon2": "^2.0.2",
 		"@prisma/client": "^6.17.1",
 		"@sveltejs/adapter-node": "^5.3.2",
+		"adm-zip": "^0.5.16",
 		"better-sqlite3": "^12.4.1",
 		"lucide": "^0.544.0",
 		"prisma": "^5.16.0",

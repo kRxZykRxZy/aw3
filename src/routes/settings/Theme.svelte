@@ -104,15 +104,15 @@
 	});
 </script>
 
-<div class="gap-4 flex flex-col">
+<div class="flex flex-col gap-4">
 	<p class="text-sm text-gray-700 dark:text-gray-300">
 		These settings only apply to your current browser and device.
 	</p>
-	<label for="theme-select" class="font-medium text-gray-700 dark:text-gray-300 block">Theme:</label
+	<label for="theme-select" class="block font-medium text-gray-700 dark:text-gray-300">Theme:</label
 	>
 	<select
 		id="theme-select"
-		class="focus:border-accent focus:ring-accent rounded-md border-gray-300 p-2 pr-8 shadow-sm dark:border-gray-600 dark:bg-gray-700 dark:text-white block w-full cursor-pointer border"
+		class="focus:border-accent focus:ring-accent block w-full cursor-pointer rounded-md border border-gray-300 p-2 pr-8 shadow-sm dark:border-gray-600 dark:bg-gray-700 dark:text-white"
 		bind:value={themePreference}
 	>
 		<option value="system">Managed by OS</option>
@@ -123,7 +123,7 @@
 
 <div class="bg-background dark:bg-background-dark mt-8 rounded-lg p-6 shadow-md">
 	<p>This is a demonstration of your current theme preference.</p>
-	<div class="rounded inline-flex columns-1 overflow-hidden">
+	<div class="inline-flex columns-1 overflow-hidden rounded">
 		<div class="bg-accent h-8 w-9"></div>
 		<div class="bg-border dark:bg-border-dark h-8 w-9"></div>
 		<div class="bg-footer dark:bg-footer-dark h-8 w-9"></div>

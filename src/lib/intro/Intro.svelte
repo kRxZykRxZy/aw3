@@ -5,14 +5,14 @@
 	import { User, FolderOpen, FilePlus2 } from '@lucide/svelte'; // Corrected import for Lucide icons in Svelte
 </script>
 
-<div class="p-5 flex flex-col items-center">
+<div class="flex flex-col items-center p-5">
 	<!--
         A placeholder logo/initials display.
         Styled with a dashed border and rounded corners.
         Includes dark mode styling for border and text color.
     -->
 	<div
-		class="mb-5 rounded-md border-gray-300 text-xl text-gray-500 dark:border-gray-600 dark:text-gray-400 flex h-[60px] w-[60px] items-center justify-center border-2 border-dashed"
+		class="mb-5 flex h-[60px] w-[60px] items-center justify-center rounded-md border-2 border-dashed border-gray-300 text-xl text-gray-500 dark:border-gray-600 dark:text-gray-400"
 	>
 		<span>AM</span>
 	</div>
@@ -27,7 +27,7 @@
 	<!--
         Container for the action buttons, using flexbox for horizontal layout and gap.
     -->
-	<div class="gap-2.5 flex">
+	<div class="flex gap-2.5">
 		<!--
             Create button:
             - Flex column for icon and text.
@@ -38,9 +38,9 @@
             - onClick handler to navigate to the create page.
         -->
 		<button
-			class="rounded-r-md border-gray-300 bg-gray-100 ease-in-out dark:border-gray-600 dark:bg-gray-700 dark:text-gray-200 flex h-[70px] w-[70px] cursor-pointer flex-col items-center justify-center
-                   rounded-l-full border
-                   transition-transform duration-100 active:scale-95"
+			class="flex h-[70px] w-[70px] cursor-pointer flex-col items-center justify-center rounded-l-full rounded-r-md border border-gray-300 bg-gray-100 transition-transform duration-100
+                   ease-in-out active:scale-95
+                   dark:border-gray-600 dark:bg-gray-700 dark:text-gray-200"
 			on:click={() => goto('/editor')}
 		>
 			<span class="mb-1.5 text-2xl text-gray-700 dark:text-gray-200"><FilePlus2 /></span>
@@ -55,9 +55,9 @@
             - onClick handler to navigate to the my-stuff page.
         -->
 		<button
-			class="rounded-md border-gray-300 bg-gray-100 ease-in-out dark:border-gray-600 dark:bg-gray-700 dark:text-gray-200 flex h-[70px] w-[70px] cursor-pointer flex-col items-center justify-center
-                   border
-                   transition-transform duration-100 active:scale-95"
+			class="flex h-[70px] w-[70px] cursor-pointer flex-col items-center justify-center rounded-md border border-gray-300 bg-gray-100 transition-transform duration-100 ease-in-out
+                   active:scale-95
+                   dark:border-gray-600 dark:bg-gray-700 dark:text-gray-200"
 			on:click={() => goto('/my-stuff')}
 		>
 			<span class="mb-1.5 text-2xl text-gray-700 dark:text-gray-200"><FolderOpen /></span>
@@ -72,9 +72,9 @@
             - onClick handler to navigate to the profile page.
         -->
 		<button
-			class="rounded-l-md border-gray-300 bg-gray-100 ease-in-out dark:border-gray-600 dark:bg-gray-700 dark:text-gray-200 flex h-[70px] w-[70px] cursor-pointer flex-col items-center justify-center
-                   rounded-r-full border
-                   transition-transform duration-100 active:scale-95"
+			class="flex h-[70px] w-[70px] cursor-pointer flex-col items-center justify-center rounded-l-md rounded-r-full border border-gray-300 bg-gray-100 transition-transform duration-100
+                   ease-in-out active:scale-95
+                   dark:border-gray-600 dark:bg-gray-700 dark:text-gray-200"
 			on:click={() => goto('/profile')}
 		>
 			<span class="mb-1.5 text-2xl text-gray-700 dark:text-gray-200"><User /></span>
