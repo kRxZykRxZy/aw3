@@ -1,6 +1,5 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
-	import defaultProject from '$lib/default-project/Project.apz';
 
 	onMount(async () => {
 		const sessionRes = await fetch('/internalapi/session', {
@@ -11,7 +10,7 @@
 		const sessionData = await sessionRes.json();
 		if (!sessionData.username) return;
 
-		const response = await fetch(defaultProject);
+		const response = await fetch('/default-project/Project.apz');
 		const blob = await response.blob();
 		const formData = new FormData();
 		formData.append('files', new File([blob], 'Project.apz'));
