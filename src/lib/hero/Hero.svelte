@@ -14,7 +14,7 @@
 
 		<div class="mt-4 flex flex-wrap gap-4">
 			<a
-				href="https://ampmod.codeberg.page"
+				href="https://ampmod.codeberg.page/editor"
 				class="text-accent-secondary hover:bg-footer flex items-center gap-2 rounded-xl bg-white px-6 py-3 text-lg font-black shadow transition-colors duration-200 hover:text-green-800"
 				aria-label="Try AmpMod"
 			>

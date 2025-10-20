@@ -126,7 +126,7 @@
 						on:click={toggleMenu}>Contribute</a
 					>
 					<a
-						href="https://ampmod.codeberg.page/editor.html"
+						href="/projects/create"
 						class="block px-4 py-2 font-bold hover:bg-black/5"
 						on:click={toggleMenu}>Create</a
 					>
@@ -156,7 +156,7 @@
 		</a>
 
 		<div class="hidden items-center gap-2 md:flex">
-			<a href="/editor" class="header-link rounded px-3 py-2 font-bold hover:bg-black/10">Create</a>
+			<a href="/projects/create" class="header-link rounded px-3 py-2 font-bold hover:bg-black/10">Create</a>
 			<a
 				href="https://ampmod.codeberg.page/credits.html"
 				class="header-link rounded px-3 py-2 font-bold hover:bg-black/10">Credits</a
@@ -201,7 +201,7 @@
 							id="profile-menu"
 						>
 							<a
-								href={`/@${$username}`}
+								href={`/users/${$username}`}
 								class="block px-4 py-2 font-bold hover:bg-black/5"
 								on:click={closeProfile}>Profile</a
 							>
