@@ -15,7 +15,7 @@ const config = {
 		alias: {
 			$lib: path.resolve('./src/lib'),
 			$components: path.resolve('./src/lib'),
-			$stores: 'ath.resolve('./src/stores')
+			$stores: path.resolve('./src/stores')
 		}
 	},
 	extensions: ['.svelte', '.svx']
