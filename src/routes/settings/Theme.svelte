@@ -112,7 +112,7 @@
 	>
 	<select
 		id="theme-select"
-		class="block w-full cursor-pointer rounded-md border border-gray-300 p-2 pr-8 shadow-sm focus:border-accent focus:ring-accent dark:border-gray-600 dark:bg-gray-700 dark:text-white"
+		class="focus:border-accent focus:ring-accent block w-full cursor-pointer rounded-md border border-gray-300 p-2 pr-8 shadow-sm dark:border-gray-600 dark:bg-gray-700 dark:text-white"
 		bind:value={themePreference}
 	>
 		<option value="system">Managed by OS</option>
@@ -121,11 +121,11 @@
 	</select>
 </div>
 
-<div class="mt-8 rounded-lg bg-background p-6 shadow-md dark:bg-background-dark">
+<div class="bg-background dark:bg-background-dark mt-8 rounded-lg p-6 shadow-md">
 	<p>This is a demonstration of your current theme preference.</p>
 	<div class="inline-flex columns-1 overflow-hidden rounded">
-		<div class="h-8 w-9 bg-accent"></div>
-		<div class="h-8 w-9 bg-border dark:bg-border-dark"></div>
-		<div class="h-8 w-9 bg-footer dark:bg-footer-dark"></div>
+		<div class="bg-accent h-8 w-9"></div>
+		<div class="bg-border dark:bg-border-dark h-8 w-9"></div>
+		<div class="bg-footer dark:bg-footer-dark h-8 w-9"></div>
 	</div>
 </div>

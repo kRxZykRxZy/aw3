@@ -68,7 +68,7 @@
 		></textarea>
 		<button
 			type="submit"
-			class="hover:bg-accent-hover rounded bg-accent px-4 py-2 font-bold text-white transition-colors"
+			class="hover:bg-accent-hover bg-accent rounded px-4 py-2 font-bold text-white transition-colors"
 			>Send Message</button
 		>
 	</form>

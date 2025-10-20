@@ -19,7 +19,7 @@
 	let selectedFact = Math.floor(Math.random() * funFacts.length);
 </script>
 
-<footer class="mt-20 w-full bg-footer px-4 py-12 text-text dark:bg-footer-dark dark:text-text-dark">
+<footer class="bg-footer text-text dark:bg-footer-dark dark:text-text-dark mt-20 w-full px-4 py-12">
 	<div class="mx-auto grid max-w-7xl grid-cols-2 gap-x-8 gap-y-12 sm:grid-cols-3 md:grid-cols-6">
 		<nav aria-label="Community Links" class="space-y-4">
 			<h4 class="text-primary-dark dark:text-primary-light text-lg font-semibold">Community</h4>
@@ -155,7 +155,7 @@
 				<button
 					type="button"
 					data-cc="show-preferencesModal"
-					class="hover:text-accent-hover cursor-pointer text-accent transition-colors"
+					class="hover:text-accent-hover text-accent cursor-pointer transition-colors"
 					title="Manage your cookie preferences">Cookie Preferences</button
 				>
 				{#if browser}
@@ -163,7 +163,7 @@
 						{funFacts[selectedFact]}
 						<button
 							type="button"
-							class="cursor-pointer text-accent"
+							class="text-accent cursor-pointer"
 							on:click={() => (selectedFact = Math.floor(Math.random() * funFacts.length))}
 							aria-label="Show another fun fact"
 						>

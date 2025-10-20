@@ -19,7 +19,7 @@
 
 <div class="m-auto min-h-screen">
 	<div>
-		<header class="w-full bg-accent-secondary px-6 py-10 text-center text-white">
+		<header class="bg-accent-secondary w-full px-6 py-10 text-center text-white">
 			<h1 class="mb-8 text-5xl font-black">Low floor. Wide walls. <em>No</em> ceiling.</h1>
 			<p class="mx-auto max-w-3xl text-xl">
 				AmpMod is a powerful block-based programming language built on Scratch 3.0 that takes away
@@ -65,7 +65,7 @@
 	<section class="container mx-auto px-6 py-16">
 		<div class="grid grid-cols-1 gap-8 md:grid-cols-3">
 			<div class="rounded-lg bg-gray-100 p-6 shadow-lg dark:bg-gray-800">
-				<h3 class="mb-4 text-xl font-black text-accent">Advanced</h3>
+				<h3 class="text-accent mb-4 text-xl font-black">Advanced</h3>
 				<p class="text-gray-700 dark:text-gray-300">
 					AmpMod includes arrays, which are first class lists you can nest inside of each other. In
 					addition, AmpMod includes over 100 extensions for you to use in your projects.
@@ -75,13 +75,13 @@
 				</p>
 			</div>
 			<div class="rounded-lg bg-gray-100 p-6 shadow-lg dark:bg-gray-800">
-				<h3 class="mb-4 text-xl font-black text-accent">Open-source</h3>
+				<h3 class="text-accent mb-4 text-xl font-black">Open-source</h3>
 				<p class="text-gray-700 dark:text-gray-300">
 					AmpMod is entirely open-source under various licences, primarily the <a
 						href="/gpl"
-						class="font-bold text-accent underline">GNU General Public Licence 3.0</a
+						class="text-accent font-bold underline">GNU General Public Licence 3.0</a
 					>
-					and <a href="/mpl" class="font-bold text-accent underline">Mozilla Public Licence 2.0</a>.
+					and <a href="/mpl" class="text-accent font-bold underline">Mozilla Public Licence 2.0</a>.
 					It is free for both non-commercial and commercial use.
 				</p>
 				<p class="font-bold text-gray-900 dark:text-white">
@@ -89,7 +89,7 @@
 				</p>
 			</div>
 			<div class="rounded-lg bg-gray-100 p-6 shadow-lg dark:bg-gray-800">
-				<h3 class="mb-4 text-xl font-black text-accent">Community-ran</h3>
+				<h3 class="text-accent mb-4 text-xl font-black">Community-ran</h3>
 				<p class="text-gray-700 dark:text-gray-300">
 					AmpMod is ran entirely by a group of Scratchers who want an opportunity to use more
 					advanced programming features in their projects. We also implement suggestions from the
@@ -104,11 +104,11 @@
 
 	<section class="py-16">
 		<div class="container mx-auto px-6 text-center">
-			<h2 class="mb-8 text-3xl font-bold text-accent">Need Help?</h2>
+			<h2 class="text-accent mb-8 text-3xl font-bold">Need Help?</h2>
 			<div class="grid grid-cols-1 gap-8 md:grid-cols-4">
 				<div>
 					<a
-						class="block rounded-lg bg-accent px-6 py-4 text-lg font-bold text-white transition-shadow hover:shadow-lg"
+						class="bg-accent block rounded-lg px-6 py-4 text-lg font-bold text-white transition-shadow hover:shadow-lg"
 						href="https://ampmod.codeberg.page/manual"
 						target="_blank"
 						rel="noopener noreferrer"
@@ -122,7 +122,7 @@
 				</div>
 				<div>
 					<a
-						class="block rounded-lg bg-accent px-6 py-4 text-lg font-bold text-white transition-shadow hover:shadow-lg"
+						class="bg-accent block rounded-lg px-6 py-4 text-lg font-bold text-white transition-shadow hover:shadow-lg"
 						href="https://ampmod.miraheze.org"
 						target="_blank"
 						rel="noopener noreferrer"
@@ -136,7 +136,7 @@
 				</div>
 				<div>
 					<a
-						class="block rounded-lg bg-accent px-6 py-4 text-lg font-bold text-white transition-shadow hover:shadow-lg"
+						class="bg-accent block rounded-lg px-6 py-4 text-lg font-bold text-white transition-shadow hover:shadow-lg"
 						href="https://ampmod.flarum.cloud"
 						target="_blank"
 						rel="noopener noreferrer"
@@ -150,7 +150,7 @@
 				</div>
 				<div>
 					<a
-						class="block rounded-lg bg-accent px-6 py-4 text-lg font-bold text-white transition-shadow hover:shadow-lg"
+						class="bg-accent block rounded-lg px-6 py-4 text-lg font-bold text-white transition-shadow hover:shadow-lg"
 						href="https://ampmod.flarum.cloud/blog"
 						target="_blank"
 						rel="noopener noreferrer"
@@ -167,11 +167,11 @@
 	</section>
 
 	<section class="container mx-auto px-6 py-16 text-center">
-		<h2 class="mb-8 text-3xl font-bold text-accent">Contribute to AmpMod!</h2>
+		<h2 class="text-accent mb-8 text-3xl font-bold">Contribute to AmpMod!</h2>
 		<div class="grid grid-cols-1 gap-8 md:grid-cols-3">
 			<div>
 				<a
-					class="block rounded-lg bg-accent px-6 py-4 text-lg font-bold text-white transition-shadow hover:shadow-lg"
+					class="bg-accent block rounded-lg px-6 py-4 text-lg font-bold text-white transition-shadow hover:shadow-lg"
 					href="https://ampmod.codeberg.page/manual/dev"
 					target="_blank"
 					rel="noopener noreferrer"
@@ -185,7 +185,7 @@
 			</div>
 			<div>
 				<a
-					class="block rounded-lg bg-accent px-6 py-4 text-lg font-bold text-white transition-shadow hover:shadow-lg"
+					class="bg-accent block rounded-lg px-6 py-4 text-lg font-bold text-white transition-shadow hover:shadow-lg"
 					href="https://codeberg.org/ampmod"
 					target="_blank"
 					rel="noopener noreferrer"
@@ -199,7 +199,7 @@
 			</div>
 			<div>
 				<a
-					class="block rounded-lg bg-accent px-6 py-4 text-lg font-bold text-white transition-shadow hover:shadow-lg"
+					class="bg-accent block rounded-lg px-6 py-4 text-lg font-bold text-white transition-shadow hover:shadow-lg"
 					href="https://ampmod.flarum.cloud/t/suggestions"
 					target="_blank"
 					rel="noopener noreferrer"

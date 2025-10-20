@@ -269,7 +269,7 @@
 <svelte:head>
 	<title>Join AmpMod</title>
 </svelte:head>
-<div class="min-h-screen bg-accent">
+<div class="bg-accent min-h-screen">
 	<div class="p-4">
 		<a href="/" style="display: inline-block;">
 			<img src={logoUrl} alt="AmpMod" class="h-8" />
@@ -283,7 +283,7 @@
 		>
 	</div>
 	<div
-		class="mx-auto mt-4 max-w-xl rounded-lg border border-gray-300 bg-background p-8 font-sans text-text shadow-lg dark:border-border-dark dark:bg-background-dark dark:text-text-dark"
+		class="bg-background text-text dark:border-border-dark dark:bg-background-dark dark:text-text-dark mx-auto mt-4 max-w-xl rounded-lg border border-gray-300 p-8 font-sans shadow-lg"
 	>
 		<h1 class="mb-6 text-center text-2xl font-bold">Join AmpMod</h1>
 
@@ -311,7 +311,7 @@
 		{/if}
 
 		{#if $isLoggedIn}
-			<p class="text-center text-accent dark:text-accent-secondary">
+			<p class="text-accent dark:text-accent-secondary text-center">
 				You already seem to be logged into AmpMod.
 			</p>
 		{:else}
@@ -384,7 +384,7 @@
 							type="text"
 							bind:value={username}
 							required
-							class="rounded border border-gray-300 bg-white p-2 text-text focus:ring-2 focus:ring-accent focus:outline-none dark:border-border-dark dark:bg-gray-800 dark:text-text-dark"
+							class="text-text focus:ring-accent dark:border-border-dark dark:text-text-dark rounded border border-gray-300 bg-white p-2 focus:outline-none focus:ring-2 dark:bg-gray-800"
 							autocomplete="username"
 						/>
 						<p class="mt-1 text-gray-700 dark:text-gray-300">Must:</p>
@@ -429,7 +429,7 @@
 							type="password"
 							bind:value={password}
 							required
-							class="mb-2 rounded border border-gray-300 bg-white p-2 text-text focus:ring-2 focus:ring-accent focus:outline-none dark:border-border-dark dark:bg-gray-800 dark:text-text-dark"
+							class="text-text focus:ring-accent dark:border-border-dark dark:text-text-dark mb-2 rounded border border-gray-300 bg-white p-2 focus:outline-none focus:ring-2 dark:bg-gray-800"
 							autocomplete="new-password"
 						/>
 						<label for="confirmPassword" class="mb-2 font-medium">Confirm Password</label>
@@ -438,7 +438,7 @@
 							type="password"
 							bind:value={confirmPassword}
 							required
-							class="rounded border border-gray-300 bg-white p-2 text-text focus:ring-2 focus:ring-accent focus:outline-none dark:border-border-dark dark:bg-gray-800 dark:text-text-dark"
+							class="text-text focus:ring-accent dark:border-border-dark dark:text-text-dark rounded border border-gray-300 bg-white p-2 focus:outline-none focus:ring-2 dark:bg-gray-800"
 							autocomplete="new-password"
 						/>
 						{#if password !== confirmPassword && confirmPassword}
@@ -478,7 +478,7 @@
 							id="email"
 							type="email"
 							bind:value={email}
-							class="mb-2 rounded border border-gray-300 bg-white p-2 text-text focus:ring-2 focus:ring-accent focus:outline-none dark:border-border-dark dark:bg-gray-800 dark:text-text-dark"
+							class="text-text focus:ring-accent dark:border-border-dark dark:text-text-dark mb-2 rounded border border-gray-300 bg-white p-2 focus:outline-none focus:ring-2 dark:bg-gray-800"
 							autocomplete="email"
 						/>
 						<div class="mt-2 flex items-center gap-2">
@@ -511,7 +511,7 @@
 					{#if step < totalSteps}
 						<button
 							type="button"
-							class="rounded-lg bg-accent px-4 py-2 font-bold text-white transition hover:bg-green-600 disabled:cursor-not-allowed disabled:opacity-50"
+							class="bg-accent rounded-lg px-4 py-2 font-bold text-white transition hover:bg-green-600 disabled:cursor-not-allowed disabled:opacity-50"
 							on:click={() => {
 								if (
 									// Only validate if user is actually entering data in that step
@@ -535,7 +535,7 @@
 					{:else}
 						<button
 							type="submit"
-							class="rounded-lg bg-accent px-4 py-2 font-bold text-white transition hover:bg-green-600 disabled:cursor-not-allowed disabled:opacity-50"
+							class="bg-accent rounded-lg px-4 py-2 font-bold text-white transition hover:bg-green-600 disabled:cursor-not-allowed disabled:opacity-50"
 							disabled={!canProceedStep4Terms()}
 						>
 							Join
@@ -557,13 +557,13 @@
 	</div>
 
 	{#if showModal}
-		<div class="bg-opacity-50 fixed inset-0 z-50 flex items-center justify-center bg-black">
+		<div class="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
 			<div
-				class="w-full max-w-sm rounded-lg border border-gray-300 bg-white p-6 text-center text-text shadow-xl dark:border-border-dark dark:bg-background-dark dark:text-text-dark"
+				class="text-text dark:border-border-dark dark:bg-background-dark dark:text-text-dark w-full max-w-sm rounded-lg border border-gray-300 bg-white p-6 text-center shadow-xl"
 			>
 				<p class="mb-4 text-lg font-semibold">{modalMessage}</p>
 				<button
-					class="rounded-lg bg-accent px-4 py-2 font-bold text-white transition hover:bg-green-600"
+					class="bg-accent rounded-lg px-4 py-2 font-bold text-white transition hover:bg-green-600"
 					on:click={closeMessageBox}
 				>
 					OK

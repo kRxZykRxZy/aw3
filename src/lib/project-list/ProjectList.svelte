@@ -116,7 +116,7 @@
 </script>
 
 <div
-	class="mx-auto my-2 max-w-4xl rounded-lg border border-border bg-background p-4 font-sans text-text dark:border-border-dark dark:bg-background-dark dark:text-text-dark"
+	class="border-border bg-background text-text dark:border-border-dark dark:bg-background-dark dark:text-text-dark mx-auto my-2 max-w-4xl rounded-lg border p-4 font-sans"
 >
 	<h2 class="mb-3 text-xl font-semibold">{title}</h2>
 
@@ -125,7 +125,7 @@
 		<div class="relative flex gap-4 overflow-x-hidden pb-4" use:scrollToStart>
 			{#each Array(skeletonCount) as _, i (i)}
 				<div
-					class="w-48 flex-shrink-0 animate-pulse overflow-hidden rounded-md border border-border bg-footer shadow-sm dark:border-border-dark dark:bg-footer-dark"
+					class="border-border bg-footer dark:border-border-dark dark:bg-footer-dark w-48 flex-shrink-0 animate-pulse overflow-hidden rounded-md border shadow-sm"
 				>
 					<div
 						class="pointer-events-none m-2 mb-0 flex aspect-[4/3] items-center justify-center rounded bg-gray-200 text-sm text-gray-400 dark:bg-gray-700 dark:text-gray-500"
@@ -134,14 +134,14 @@
 					</div>
 					<div class="px-3 py-2">
 						<div
-							class="mt-1 mb-3 h-5 w-3/4 rounded bg-gray-300 text-base font-medium dark:bg-gray-600"
+							class="mb-3 mt-1 h-5 w-3/4 rounded bg-gray-300 text-base font-medium dark:bg-gray-600"
 						></div>
 						<div class="my-1 h-3 w-1/2 rounded bg-gray-300 dark:bg-gray-600"></div>
 					</div>
 				</div>
 			{/each}
 			<div
-				class="pointer-events-none absolute inset-y-0 right-0 w-20 bg-gradient-to-l from-background to-transparent dark:from-background-dark"
+				class="from-background dark:from-background-dark pointer-events-none absolute inset-y-0 right-0 w-20 bg-gradient-to-l to-transparent"
 			></div>
 		</div>
 	{:else if error}

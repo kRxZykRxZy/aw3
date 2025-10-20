@@ -134,7 +134,7 @@
 </script>
 
 <!-- Main content container - removed outer padding, background, shadow, border -->
-<div class="mx-auto flex flex-col gap-8 font-sans text-text dark:text-text-dark">
+<div class="text-text dark:text-text-dark mx-auto flex flex-col gap-8 font-sans">
 	<!-- Change Username Section -->
 	<section>
 		<h3 class="mb-4 text-2xl font-bold">Change Username</h3>
@@ -148,11 +148,11 @@
 				name="username"
 				placeholder="New Username"
 				required
-				class="rounded-md border border-border bg-white p-3 text-text transition duration-200 focus:border-transparent focus:ring-2 focus:ring-accent focus:outline-none dark:border-border-dark dark:bg-gray-700 dark:text-white"
+				class="border-border text-text focus:ring-accent dark:border-border-dark rounded-md border bg-white p-3 transition duration-200 focus:border-transparent focus:outline-none focus:ring-2 dark:bg-gray-700 dark:text-white"
 			/>
 			<button
 				type="submit"
-				class="rounded-md bg-accent px-6 py-3 font-semibold text-white shadow-md transition duration-200 hover:bg-accent-secondary focus:ring-2 focus:ring-accent focus:ring-offset-2 focus:outline-none dark:focus:ring-offset-gray-800"
+				class="bg-accent hover:bg-accent-secondary focus:ring-accent rounded-md px-6 py-3 font-semibold text-white shadow-md transition duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 dark:focus:ring-offset-gray-800"
 			>
 				Change Username
 			</button>
@@ -175,11 +175,11 @@
 				name="password"
 				placeholder="Password"
 				required
-				class="rounded-md border border-border bg-white p-3 text-text transition duration-200 focus:border-transparent focus:ring-2 focus:ring-accent focus:outline-none dark:border-border-dark dark:bg-gray-700 dark:text-white"
+				class="border-border text-text focus:ring-accent dark:border-border-dark rounded-md border bg-white p-3 transition duration-200 focus:border-transparent focus:outline-none focus:ring-2 dark:bg-gray-700 dark:text-white"
 			/>
 			<button
 				type="submit"
-				class="rounded-md bg-red-600 px-6 py-3 font-semibold text-white shadow-md transition duration-200 hover:bg-red-700 focus:ring-2 focus:ring-red-500 focus:ring-offset-2 focus:outline-none dark:focus:ring-offset-gray-800"
+				class="rounded-md bg-red-600 px-6 py-3 font-semibold text-white shadow-md transition duration-200 hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 dark:focus:ring-offset-gray-800"
 			>
 				Delete Account
 			</button>

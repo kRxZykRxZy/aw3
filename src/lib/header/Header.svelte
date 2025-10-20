@@ -90,7 +90,7 @@
 </script>
 
 <header
-	class="fixed top-0 left-0 z-10 flex h-[50px] w-full items-center justify-center border-b border-black/20 bg-accent px-2 font-sans text-sm text-white shadow-md md:px-4"
+	class="bg-accent fixed left-0 top-0 z-10 flex h-[50px] w-full items-center justify-center border-b border-black/20 px-2 font-sans text-sm text-white shadow-md md:px-4"
 >
 	<div class="flex w-full items-center justify-center gap-4">
 		<!-- Hamburger for mobile -->
@@ -106,7 +106,7 @@
 
 			{#if isMenuOpen}
 				<div
-					class="hamburger-menu absolute top-full left-0 mt-2 w-48 max-w-[90vw] rounded border border-black/20 bg-accent text-white shadow-lg"
+					class="hamburger-menu bg-accent absolute left-0 top-full mt-2 w-48 max-w-[90vw] rounded border border-black/20 text-white shadow-lg"
 					transition:fade={{ duration: 100 }}
 					id="main-menu"
 				>
@@ -196,7 +196,7 @@
 					</button>
 					{#if isProfileOpen}
 						<div
-							class="absolute top-full right-0 z-20 mt-2 w-48 max-w-[90vw] rounded border border-black/20 bg-accent text-white shadow-lg"
+							class="bg-accent absolute right-0 top-full z-20 mt-2 w-48 max-w-[90vw] rounded border border-black/20 text-white shadow-lg"
 							transition:fade={{ duration: 100 }}
 							id="profile-menu"
 						>
@@ -234,7 +234,7 @@
 					>
 					{#if isLoginOpen}
 						<div
-							class="absolute top-full right-0 z-20 mt-2 flex w-50 max-w-[95vw] flex-col gap-4 rounded border border-black/20 bg-accent p-6 text-white shadow-lg"
+							class="w-50 bg-accent absolute right-0 top-full z-20 mt-2 flex max-w-[95vw] flex-col gap-4 rounded border border-black/20 p-6 text-white shadow-lg"
 							id="login-menu"
 							style="min-width:260px;"
 							transition:fade={{ duration: 100 }}
@@ -255,7 +255,7 @@
 							/>
 							<div class="flex items-center justify-between">
 								<button
-									class="rounded bg-white px-4 py-2 font-bold text-accent hover:bg-gray-100"
+									class="text-accent rounded bg-white px-4 py-2 font-bold hover:bg-gray-100"
 									on:click={logIn}>Log in</button
 								>
 								<a href="/login-help" class="font-bold text-white/90 hover:underline"
@@ -268,7 +268,7 @@
 
 				<a
 					href="/join"
-					class="header-link rounded bg-white px-3 py-2 font-bold text-accent hover:text-accent-secondary"
+					class="header-link text-accent hover:text-accent-secondary rounded bg-white px-3 py-2 font-bold"
 					>Join</a
 				>
 			{/if}

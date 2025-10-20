@@ -17,7 +17,7 @@
 			</div>
 			<a
 				href="/"
-				class="ml-1 cursor-pointer rounded-md bg-accent px-3 py-1.5 text-sm text-white no-underline transition-colors hover:bg-accent-secondary"
+				class="bg-accent hover:bg-accent-secondary ml-1 cursor-pointer rounded-md px-3 py-1.5 text-sm text-white no-underline transition-colors"
 				>Link</a
 			>
 		</li>
@@ -27,7 +27,7 @@
 			<span class="font-bold text-gray-800 dark:text-gray-200">Codeberg</span>
 			<a
 				href="/"
-				class="cursor-pointer rounded-md bg-accent px-3 py-1.5 text-sm text-white no-underline transition-colors hover:bg-accent-secondary"
+				class="bg-accent hover:bg-accent-secondary cursor-pointer rounded-md px-3 py-1.5 text-sm text-white no-underline transition-colors"
 				>Link</a
 			>
 		</li>
@@ -37,7 +37,7 @@
 			<span class="font-bold text-gray-800 dark:text-gray-200">GitHub</span>
 			<a
 				href="/"
-				class="cursor-pointer rounded-md bg-accent px-3 py-1.5 text-sm text-white no-underline transition-colors hover:bg-accent-secondary"
+				class="bg-accent hover:bg-accent-secondary cursor-pointer rounded-md px-3 py-1.5 text-sm text-white no-underline transition-colors"
 				>Link</a
 			>
 		</li>
@@ -47,7 +47,7 @@
 			<span class="font-bold text-gray-800 dark:text-gray-200">AmpMod Wiki</span>
 			<a
 				href="/"
-				class="cursor-pointer rounded-md bg-accent px-3 py-1.5 text-sm text-white no-underline transition-colors hover:bg-accent-secondary"
+				class="bg-accent hover:bg-accent-secondary cursor-pointer rounded-md px-3 py-1.5 text-sm text-white no-underline transition-colors"
 				>Link</a
 			>
 		</li>
@@ -57,14 +57,14 @@
 			<span class="font-bold text-gray-800 dark:text-gray-200">AmpMod Forums</span>
 			<a
 				href="/"
-				class="cursor-pointer rounded-md bg-accent px-3 py-1.5 text-sm text-white no-underline transition-colors hover:bg-accent-secondary"
+				class="bg-accent hover:bg-accent-secondary cursor-pointer rounded-md px-3 py-1.5 text-sm text-white no-underline transition-colors"
 				>Link</a
 			>
 		</li>
 	</ul>
 </div>
 
-<h3 class="mt-8 mb-2 text-xl font-semibold text-gray-900 dark:text-gray-100">Account Standing</h3>
+<h3 class="mb-2 mt-8 text-xl font-semibold text-gray-900 dark:text-gray-100">Account Standing</h3>
 <i class="text-sm text-gray-700 dark:text-gray-300">
 	The AmpMod website is moderated to ensure that projects follow our
 	<a href="/proj-guidelines" class="text-accent hover:underline">guidelines</a>. If you violate the

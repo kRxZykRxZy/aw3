@@ -8,7 +8,7 @@
 			{text}
 		</span>
 		{#if subtext}
-			<p class="mt-2 font-stretch-condensed">
+			<p class="font-stretch-condensed mt-2">
 				{subtext}
 			</p>
 		{/if}

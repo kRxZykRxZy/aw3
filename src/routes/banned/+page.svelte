@@ -110,9 +110,9 @@
 <div class="mx-auto mt-16 max-w-2xl rounded-xl font-sans text-base">
 	{#if fullyLoaded}
 		<h1 class="mb-6 text-3xl font-bold text-red-600">You have been banned from AmpMod.</h1>
-		<p class="mb-2 text-gray-600 italic dark:text-text-dark">Reason: {getBanReasonDisplay()}</p>
+		<p class="dark:text-text-dark mb-2 italic text-gray-600">Reason: {getBanReasonDisplay()}</p>
 		{#if banType}
-			<p class="mb-4 italic dark:text-text-dark">This ban is {getBanTypeDisplay()}.</p>
+			<p class="dark:text-text-dark mb-4 italic">This ban is {getBanTypeDisplay()}.</p>
 		{/if}
 		{#if banReason != 'csam'}
 			<p class="mb-4">
@@ -129,7 +129,7 @@
 					appeal this ban.
 				</p>
 				<button
-					class="rounded-md bg-accent px-4 py-2 text-white shadow transition hover:bg-accent-secondary"
+					class="bg-accent hover:bg-accent-secondary rounded-md px-4 py-2 text-white shadow transition"
 					on:click={() => (showAppealForm = true)}>Appeal Ban</button
 				>
 			{/if}
@@ -167,7 +167,7 @@
 						<button
 							on:click={submitAppeal}
 							disabled={isSubmitting}
-							class="rounded-md bg-accent px-4 py-2 text-white shadow transition hover:bg-accent-secondary disabled:cursor-not-allowed disabled:opacity-60"
+							class="bg-accent hover:bg-accent-secondary rounded-md px-4 py-2 text-white shadow transition disabled:cursor-not-allowed disabled:opacity-60"
 						>
 							{#if isSubmitting}
 								Submitting...
@@ -182,7 +182,7 @@
 						>
 					</div>
 					{#if appealStatus}
-						<p class="mt-2 text-gray-500 italic">{appealStatus}</p>
+						<p class="mt-2 italic text-gray-500">{appealStatus}</p>
 					{/if}
 				</div>
 			{/if}

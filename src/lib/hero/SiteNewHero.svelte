@@ -9,7 +9,7 @@
 	<div
 		class="flex w-full flex-col items-center gap-8 text-center md:w-2/3 md:items-start md:text-left"
 	>
-		<h1 class="text-5xl leading-tight font-bold md:text-6xl">The new AmpMod is here!</h1>
+		<h1 class="text-5xl font-bold leading-tight md:text-6xl">The new AmpMod is here!</h1>
 
 		<div class="mt-2 flex flex-wrap justify-center gap-4 md:justify-start">
 			<a
