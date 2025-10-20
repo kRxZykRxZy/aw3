@@ -27,10 +27,7 @@ const config = {
       $components: 'src/lib',
       $lib: 'src/lib',
       $stores: 'src/stores'
-    },
-
-    // Optional: prevent prerender errors if not using static
-    prerender: { default: false }
+    }
   }
 };
 
