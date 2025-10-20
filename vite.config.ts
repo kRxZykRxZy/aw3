@@ -16,7 +16,7 @@ export default defineConfig({
     cors: true // allow any URL in dev server
   },
   preview: {
-    allowedHosts: 'all' // allow any host in preview mode
+    allowedHosts: ['.']
   },
   ssr: {
     noExternal: ['drizzle-orm', 'drizzle-kit', 'pg']
