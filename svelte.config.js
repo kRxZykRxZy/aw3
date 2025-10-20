@@ -10,7 +10,7 @@ const config = {
 		adapter: adapter(),
 		alias: {
 			$lib: path.resolve('./src/lib'),
-			$components: path.resolve('./src/lib/components'),
+			$components: path.resolve('./src/lib'),
 			$stores: path.resolve('./src/stores')
 		}
 	},
