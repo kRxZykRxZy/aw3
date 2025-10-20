@@ -1,7 +1,8 @@
 import fs from 'fs';
 import path from 'path';
+import type { RequestHandler } from '@sveltejs/kit';
 
-export const GET = async ({ params }) => {
+export const GET: RequestHandler = async ({ params }) => {
   try {
     const filePath = path.resolve(`prisma/internal/assets/${params.md5}`);
 
@@ -12,12 +13,18 @@ export const GET = async ({ params }) => {
     const fileBuffer = fs.readFileSync(filePath);
     const fileName = path.basename(filePath);
     const ext = path.extname(filePath).toLowerCase();
-    let contentType = 'application/octet-stream';
 
-    if (ext === '.json') contentType = 'application/json';
-    else if (ext === '.png') contentType = 'image/png';
-    else if (ext === '.jpg' || ext === '.jpeg') contentType = 'image/jpeg';
-    else if (ext === '.txt') contentType = 'text/plain';
+    const mimeTypes: Record<string, string> = {
+      '.json': 'application/json',
+      '.png': 'image/png',
+      '.jpg': 'image/jpeg',
+      '.jpeg': 'image/jpeg',
+      '.txt': 'text/plain',
+      '.mp3': 'audio/mpeg',
+      '.svg': 'image/svg+xml'
+    };
+
+    const contentType = mimeTypes[ext] || 'application/octet-stream';
 
     return new Response(fileBuffer, {
       status: 200,
@@ -27,4 +34,6 @@ export const GET = async ({ params }) => {
       }
     });
   } catch {
-    return new Response(JSON.stringify({ error: 'Internal Server Error' }), { status: 500 }
+    return new Response(JSON.stringify({ error: 'Internal Server Error' }), { status: 500 });
+  }
+};
