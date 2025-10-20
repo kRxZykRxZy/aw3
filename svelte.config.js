@@ -9,7 +9,7 @@ const path_to_layout = join(__dirname, './src/mdsvex.svelte');
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
-	preprocess: [vitePreprocess(), mdsvex({ layout: path_to_layout })],
+	preprocess: [mdsvex({ layout: path_to_layout })],
 	kit: {
 		adapter: adapter(),
 		alias: {
