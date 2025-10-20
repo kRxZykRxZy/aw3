@@ -16,7 +16,7 @@ export default defineConfig({
     cors: true // allow any URL in dev server
   },
   preview: {
-    allowedHosts: ['.']
+    allowedHosts: ['aw3-djp9.onrender.com']
   },
   ssr: {
     noExternal: ['drizzle-orm', 'drizzle-kit', 'pg']
