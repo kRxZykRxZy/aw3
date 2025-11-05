@@ -1,6 +1,2 @@
 User-agent: *
-# Disallow everything
-Disallow: /
-
-# Allow only internalapi/* paths
-Allow: /internalapi/
+Disallow: /internalapi/
