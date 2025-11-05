@@ -4,9 +4,6 @@ import { sveltekit } from '@sveltejs/kit/vite';
 import { defineConfig } from 'vite';
 
 export default defineConfig({
-	preview: {
-		allowedHosts: ['aw3-djp9.onrender.com']
-	},
 	plugins: [
 		tailwindcss(),
 		sveltekit(),
