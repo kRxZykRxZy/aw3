@@ -4,8 +4,6 @@
 @import '@fontsource-variable/inter';
 @plugin "@tailwindcss/typography";
 
-@custom-variant dark (&:where(.dark, .dark *));
-
 @theme {
   --font-sans: 'Inter Variable', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   --color-background: white;
@@ -14,14 +12,14 @@
   --color-text: #121216;
   --color-text-dark: white;
 
-  --color-accent: #59C059;
-  --color-accent-secondary: #4CAF50;
+  --color-accent: #4fa55c;
+  --color-accent-secondary: #3e834a;
 
   /* Forks: Do not change the following colors.
      This color is used as green in toggle switches and other things
      that would make more sense to be green than another accent color. */
-  --color-original-accent: #59C059;
-  --color-original-accent-secondary: #4CAF50;
+  --color-original-accent: #3e834a;
+  --color-original-accent-secondary: #3e834a;
   /* End Forks */
 
   --color-footer: #f0f0f0;
@@ -29,13 +27,4 @@
 
   --color-border: #d1d5db;
   --color-border-dark: #4b5563;
-}
-
-#cc-main {
-    --cc-font-family:'Inter Variable', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    --cc-modal-border-radius: .5rem;
-    --cc-btn-border-radius: .4rem;
-    --cc-modal-transition-duration: .25s;
-    --cc-modal-margin: 1rem;
-    --cc-z-index: 2147483647;
 }
