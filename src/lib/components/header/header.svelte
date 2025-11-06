@@ -1,21 +1,18 @@
 <!-- TODO: Add stuff for the website. This file is modified from website-v2 in ampmod/extensions.
-     Styling is inspired by the AmpMod static website UI. -->
+      Styling is inspired by the AmpMod static website UI. -->
 <script lang="ts">
-  import Logo from './logo.svg';
+  import Logo from './tw-advanced.svelte';
 </script>
 
 <header
   class="flex h-12 w-full items-center border-b border-black/10 bg-white px-2 font-sans text-sm text-black md:px-4 dark:bg-accent-secondary dark:text-white"
 >
   <div class="flex w-full items-center justify-center gap-4">
-    <a href="/" class="logo-link flex items-center">
-      <img
-        src={Logo}
-        draggable="false"
-        height="28"
-        alt="AmpMod"
-        class="h-[28px] transition-transform duration-100 hover:scale-105"
-      />
+    <a
+      href="/"
+      class="logo-link flex items-center transition-transform duration-250 hover:scale-115 hover:rotate-360"
+    >
+      <Logo />
     </a>
 
     <div class="hidden items-center gap-2 md:flex">
